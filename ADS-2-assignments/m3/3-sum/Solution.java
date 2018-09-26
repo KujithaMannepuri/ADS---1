@@ -1,14 +1,39 @@
 import java.util.Scanner;
 import java.util.Arrays;
+
+/**
+ * Class for three sum.
+ */
 class ThreeSum {
+	/**
+	 * array.
+	 */
 	private int[] arr;
+	/**
+	 * array size.
+	 */
 	private int size;
-	ThreeSum(int[] arr2, int size1) {
+
+	/**
+	 * constructor.
+	 *
+	 * @param      arr2   The arr 2
+	 * @param      size1  The size 1
+	 */
+	ThreeSum(final int[] arr2, final int size1) {
 		this.arr = arr2;
 		this.size = size1;
 	}
 	
-	public int BinarySearch(int[] arr, int val) {
+	/**
+	 * binary search function.
+	 *
+	 * @param      arr   The arr
+	 * @param      val   The value
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
+	public int BinarySearch(final int[] arr, final int val) {
 		int min = 0;
 		int max = arr.length - 1;
 		while (min <= max) {
@@ -23,7 +48,15 @@ class ThreeSum {
 		}
 		return -1;
 	}
-	public int totalsum(int[] arr) {
+
+	/**
+	 * total sum function.
+	 *
+	 * @param      arr   The arr
+	 *
+	 * @return     returns count of numbers.
+	 */
+	public int totalsum(final int[] arr) {
 		Arrays.sort(arr);
 		int count = 0;
 		for (int i = 0; i < arr.length; i++) {
@@ -37,8 +70,17 @@ class ThreeSum {
 		return count;
 	}
 }
+
+/**
+ * Class for solution.
+ */
 class Solution {
-	public static void main(String[] args) {
+	/**
+	 * main function.
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		Scanner scan = new Scanner(System.in);
 		//int num = Integer.parseInt(scan.nextLine());
 		int num = scan.nextInt();
