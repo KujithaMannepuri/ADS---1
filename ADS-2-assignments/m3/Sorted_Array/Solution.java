@@ -4,22 +4,22 @@ import java.util.Scanner;
  * Class for sorted array.
  */
 class SortedArray {
-    // /**
-    //  * arr1.
-    //  */
-    private int[] arr1;
-    // /**
-    //  * arr2.
-    //  */
-    private int[] arr2;
+    /**
+     * arrone.
+     */
+    private int[] arrone;
+    /**
+     * arrtwo.
+     */
+    private int[] arrtwo;
     /**
      * Constructs the object.
      * @param      array1    A 1
      * @param      array2    A 2
      */
     SortedArray(final int[] array1, final int[] array2) {
-        this.arr1 = array1;
-        this.arr2 = array2;
+        this.arrone = array1;
+        this.arrtwo = array2;
     }
     /**
      * getting sorted elements.
@@ -73,15 +73,15 @@ public final class Solution {
         Scanner sc = new Scanner(System.in);
         int size1 = Integer.parseInt(sc.nextLine());
         int size2 = Integer.parseInt(sc.nextLine());
-        String[] arr_1 = sc.nextLine().split(",");
-        String[] arr_2 = sc.nextLine().split(",");
+        String[] arrList1 = sc.nextLine().split(",");
+        String[] arrList2 = sc.nextLine().split(",");
         int[] array1 = new int[size1];
         int[] array2 = new int[size2];
         for (int i = 0; i < size1; i++) {
-            array1[i] = Integer.parseInt(arr_1[i]);
+            array1[i] = Integer.parseInt(arrList1[i]);
         }
         for (int j = 0; j < size2; j++) {
-            array2[j] = Integer.parseInt(arr_2[j]);
+            array2[j] = Integer.parseInt(arrList2[j]);
         }
         SortedArray sa = new SortedArray(array1, array2);
         System.out.println(sa.sort(array1, array2));
