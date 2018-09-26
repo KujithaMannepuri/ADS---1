@@ -7,15 +7,15 @@ class ThreeSum {
 		this.arr = arr2;
 		this.size = size1;
 	}
-	private boolean Duplicates(int[] arr) {
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] == arr[i + 1]) {
-				return true;
-			}
-		}
-		return false;
-	}
-	public int binarySearch(int[] arr, int val) {
+	// private boolean Duplicates(int[] arr) {
+	// 	for (int i = 0; i < arr.length - 1; i++) {
+	// 		if (arr[i] == arr[i + 1]) {
+	// 			return true;
+	// 		}
+	// 	}
+	// 	return false;
+	// }
+	public int BinarySearch(int[] arr, int val) {
 		int min = 0;
 		int max = arr.length - 1;
 		while (min <= max) {
@@ -30,13 +30,13 @@ class ThreeSum {
 		}
 		return -1;
 	}
-	public int total(int[] arr) {
+	public int totalsum(int[] arr) {
 		Arrays.sort(arr);
 		int count = 0;
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = i + 1; j < arr.length; j++) {
-				int total1 = binarySearch(arr, -(arr[i] + arr[j]));
-				if (total1 > j && total1 > 0) {
+				int tot = BinarySearch(arr, -(arr[i] + arr[j]));
+				if (tot > j && tot > 0) {
 					count++;
 				}
 			}
@@ -54,6 +54,6 @@ class Solution {
 		for (int i = 0; i < num; i++) {
 			arr[i] = scan.nextInt();			
 		}
-		System.out.println(t_sum.total(arr));
+		System.out.println(t_sum.totalsum(arr));
 	}
 }
