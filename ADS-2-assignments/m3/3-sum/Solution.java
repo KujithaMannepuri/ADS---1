@@ -24,11 +24,10 @@ class ThreeSum {
         this.arr = arr2;
         this.size = size1;
     }
-    
     /**
      * binary search function.
      *
-     * @param      arr   The arr
+     * @param      arr1   The arr
      * @param      val   The value
      *
      * @return     { description_of_the_return_value }
@@ -74,7 +73,7 @@ class ThreeSum {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
