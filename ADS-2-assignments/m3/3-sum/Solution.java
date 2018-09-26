@@ -92,7 +92,7 @@ public final class Solution {
         int[] arr = new int[num];
         ThreeSum tsum = new ThreeSum(arr, num);
         for (int i = 0; i < num; i++) {
-            arr[i] = scan.nextInt();  
+            arr[i] = scan.nextInt();
         }
         System.out.println(tsum.totalsum(arr));
     }
