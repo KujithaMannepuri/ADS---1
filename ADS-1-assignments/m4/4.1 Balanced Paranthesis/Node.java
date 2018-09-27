@@ -1,109 +1,69 @@
-/**
- * Class for node.
- */
+
 class Node {
-    /**
-     * Data in string.
-     */
-    String data;
-    /**
-     * Next node.
-     */
+    
+    String paranthesis;
+    
     Node next;
 }
 
-/**
- * Class for linkedlist.
- */
 class Linkedlist {
-    /**
-     * An empty node.
-     */
+
     private Node start = null;
-    /**
-     * Pushing an element into list.
-     *
-     * @param      ch    { given String }
-     */
-    void push(final String ch) {
-        Node val = start;
+    
+    void push(final String chr) {
+        Node value = start;
         start = new Node();
-        start.data = ch;
-        start.next = val;
+        start.paranthesis = chr;
+        start.next = value;
     }
-    /**
-     * Popping element from list.
-     *
-     * @return     { String value }
-     */
+    
     String pop() {
         if (start == null) {
             return "e";
         }
-        String r = start.data;
+        String r = start.paranthesis;
         start = start.next;
         return r;
     }
-    /**
-     * First value.
-     *
-     * @return     { value }
-     */
+    
     public Node gethead() {
         return start;
     }
 }
-/**
- * Class for balanced.
- */
-class Balanced {
-    /**
-     * Constructs the object.
-     */
-    Balanced() {
+
+class BalancedPrnths {
+    
+    BalancedPrnths() {
 
     }
-    /**
-     * Checking if the pair is matched or not.
-     *
-     * @param      str1  The string 1
-     * @param      str2  The string 2
-     *
-     * @return     { a boolean }
-     */
-    boolean Matchingpair (String str1, String str2) {
-        if (str1.equals("(") && str2.equals(")")) {
+    
+    boolean matchPrnths (String str1, String str2) {
+        if (str1.equals("{") && str2.equals("}")) {
             return true;
         }
         if (str1.equals("[") && str2.equals("]")) {
             return true;
         }
-        if (str1.equals("{") && str2.equals("}")) {
+        if (str1.equals("(") && str2.equals(")")) {
             return true;
         }
         return false;
     }
-    /**
-     * Balancing of parnathesis.
-     *
-     * @param      array  The array
-     *
-     * @return     { boolean based on matching }
-     */
+    
     boolean balancing(final String[] array) {
-        Linkedlist ll = new Linkedlist();
+        Linkedlist list = new Linkedlist();
         for (int i = 0; i < array.length; i++) {
             if (array[i].equals("(") || array[i].equals("[") || array[i].equals("{")) {
-                ll.push(array[i]);
+                list.push(array[i]);
             }
             if (array[i].equals(")") || array[i].equals("]") || array[i].equals("}")) {
-                if (Matchingpair(ll.pop(), array[i])) {
+                if (matchPrnths(list.pop(), array[i])) {
                     continue;
                 } else {
                     return false;
                 }
             }
         }
-        return ll.gethead() == null;
+        return list.gethead() == null;
     }
 }
