@@ -22,6 +22,9 @@ class LinkedList {
         obj.next = start;
         start = obj;
     }
+    int size() {
+        return size;
+    }
     // public void resize(int capacity) {
     //     if (capacity >= size) {
     //         String data = Arrays.copyOf(start, capacity);
@@ -52,7 +55,16 @@ class AddLargeNumbers {
     }
 
     public static String digitsToNumber(LinkedList list) {
-        return null;
+        String str = "";
+        Node obj = new Node();
+        // for (int i = 0; i < list.size(); i++) {
+
+        // }
+        //StringBuilder str = new StringBuilder();
+        while (obj.next != null) {
+            str.concat(obj.data);
+        }
+        return str;
     }
 
     public static LinkedList addLargeNumbers(LinkedList list1, LinkedList list2) {
