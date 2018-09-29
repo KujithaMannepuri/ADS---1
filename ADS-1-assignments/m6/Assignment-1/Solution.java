@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.LinkedList;
-
+import java.util.Iterator;
 
 class AddLargeNumbers {
     // LinkedList list;
@@ -18,17 +18,10 @@ class AddLargeNumbers {
 
     public static String digitsToNumber(LinkedList list) {
         String str = "";
-        //Node obj = new Node();
-        System.out.println(list);
-        // for (int i = 1; i < list.size(); i++) {
-        //     str.concat(list.get(i));
-        // }
-        //StringBuilder str = new StringBuilder();
-        // while (obj.next != null) {
-        //     str.concat(obj.list);
-        //     System.out.println(str);
-        // }
-        
+        Iterator i = list.listIterator();
+        while (i.hasNext()) {
+            str += i.next();
+        }
         return str;
 
     }
