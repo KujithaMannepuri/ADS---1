@@ -1,45 +1,7 @@
 import java.util.Scanner;
-import java.util.Arrays;
-class Node {
-    String data;
-    Node next;
-}
-class LinkedList {
-    Node start;
-    int size;
-    LinkedList() {
-        start = new Node();
-        size = 0;
-    }
-    void insert(String item) {
-        Node obj = new Node();
-        obj.data = item;
-        if(size == 0) {
-            start = obj;
-            size++;
-            return;
-        }
-        obj.next = start;
-        start = obj;
-    }
-    int size() {
-        return size;
-    }
-    // public void resize(int capacity) {
-    //     if (capacity >= size) {
-    //         String data = Arrays.copyOf(start, capacity);
-    //     }
-    // }
-}
-class Stack {
-    LinkedList list;
-    Stack() {
-        list = new LinkedList();
-    }
-    void push (String item){
-        list.insert(item);
-    }
-}
+import java.util.LinkedList;
+
+
 class AddLargeNumbers {
     // LinkedList list;
     // AddLargeNumbers() {
@@ -48,25 +10,25 @@ class AddLargeNumbers {
     public static LinkedList numberToDigits(String number) {
         LinkedList list = new LinkedList();
         for (int i = 0; i < number.length(); i++) {
-            String ch = number.charAt(i)+ "";
-            list.insert(ch);
+            list.addLast(Character.getNumericValue(number.charAt(i)));
         }
+        
         return list;
     }
 
     public static String digitsToNumber(LinkedList list) {
         String str = "";
-        Node obj = new Node();
-        for (int i = 1; i < list.size(); i++) {
-            str.concat(obj.data);
-        }
+        //Node obj = new Node();
+        System.out.println(list);
+        // for (int i = 1; i < list.size(); i++) {
+        //     str.concat(list.get(i));
+        // }
         //StringBuilder str = new StringBuilder();
         // while (obj.next != null) {
         //     str.concat(obj.list);
         //     System.out.println(str);
         // }
-        //System.out.println("str");
-        System.out.println(str);
+        
         return str;
 
     }
