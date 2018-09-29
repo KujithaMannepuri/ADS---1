@@ -65,7 +65,8 @@ class AddLargeNumbers {
         //     str.concat(obj.list);
         //     System.out.println(str);
         // }
-        System.out.println("str");
+        //System.out.println("str");
+        System.out.println(str);
         return str;
 
     }
