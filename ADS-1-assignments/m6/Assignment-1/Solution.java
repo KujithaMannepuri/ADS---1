@@ -57,7 +57,7 @@ class AddLargeNumbers {
     public static String digitsToNumber(LinkedList list) {
         String str = "";
         Node obj = new Node();
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = 1; i < list.size(); i++) {
             str.concat(obj.data);
         }
         //StringBuilder str = new StringBuilder();
