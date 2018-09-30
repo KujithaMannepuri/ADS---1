@@ -106,16 +106,16 @@ class Solution {
 			break;
 			case "pushRight":
 			deq.pushRight(Integer.parseInt(token[1]));
-			System.out.println(deq.toString());
+			System.out.println(deq);
 			break;
 			case "pushLeft":
 			deq.pushLeft(Integer.parseInt(token[1]));
-			System.out.println(deq.toString());
+			System.out.println(deq);
 			break;
 			case "popRight":
 			if (!deq.isEmpty()) {
 				deq.popRight();
-				System.out.println(deq.toString());
+				System.out.println(deq);
 			} else {
 				System.out.println("Deck is empty");
 			}
@@ -123,7 +123,7 @@ class Solution {
 			case "popLeft":
 			if (!deq.isEmpty()) {
 				deq.popLeft();
-				System.out.println(deq.toString());
+				System.out.println(deq);
 			} else {
 				System.out.println("Deck is empty");
 			}
