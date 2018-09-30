@@ -95,7 +95,7 @@ class Deque {
             Node temp = first;
             Node obj = new Node();
             //first = new Node();
-            obj = obj;
+            obj = first;
             obj.num = num;
             obj.next = temp;
         }
