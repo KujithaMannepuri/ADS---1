@@ -123,7 +123,7 @@ public final class Solution {
                 str += deq.popLeft() + " ";
             }
             System.out.print(str.substring(0, str.length() - 1));
-            //System.out.println();
+            System.out.println();
         }
     }
 }
