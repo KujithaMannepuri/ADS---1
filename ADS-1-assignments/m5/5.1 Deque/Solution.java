@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 /**
  * Class for deque.
  */
