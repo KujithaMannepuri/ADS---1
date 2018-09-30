@@ -37,9 +37,14 @@ class Deque {
         last = null;
         size = 0;
     }
-
-    
-    
+     /**
+     * size.
+     *
+     * @return size.
+     */
+    public int size() {
+        return size;
+    }
     /**
      * Determines if empty.
      *
@@ -51,36 +56,7 @@ class Deque {
 		}
 		return false;
 	}
-    
-    /**
-     * size.
-     *
-     * @return size.
-     */
-    public int size() {
-        return size;
-    }
-    /**
-     * Pushes a left.
-     *
-     * @param      num  The num
-     */
-    public void pushLeft(final int num) {
-        if (first == null) {
-            //Node oldfirst = first;
-            first = new Node();
-            first.num = num;
-            first.next = null;
-            last = first;
-        } else {
-            Node oldlast = first;
-            first = new Node();
-            first.num = num;
-            first.next = oldlast;
-        }
-        size++;
-    }
-    /**
+	/**
      * Pushes a right.
      *
      * @param      num  The num
@@ -93,7 +69,7 @@ class Deque {
             first = last;
         }   else {
             Node temp = last;
-            last = new Node();
+            Node last = new Node();
             last.num = num;
             last.next = null;
             temp.next = last;
@@ -101,13 +77,24 @@ class Deque {
         size++;
     }
     /**
-     * pop from left.
+     * Pushes a left.
+     *
+     * @param      num  The num
      */
-    public void popLeft() {
-        if (first != null) {
-            first = first.next;
-            size--;
+    public void pushLeft(final int num) {
+        if (first == null) {
+            //Node oldfirst = first;
+            Node first = new Node();
+            first.num = num;
+            first.next = null;
+            last = first;
+        } else {
+            Node oldlast = first;
+            first = new Node();
+            first.num = num;
+            first.next = oldlast;
         }
+        size++;
     }
     /**
      * pop from right.
@@ -124,21 +111,31 @@ class Deque {
         }
     }
     /**
-     * to string to display.
+     * pop from left.
+     */
+    public void popLeft() {
+        if (first != null) {
+            first = first.next;
+            size--;
+        }
+    }
+    /**
+     * to string to toString.
      *
      * @return  string.
      */
-    public String display() {
-        if (size != 0) {
-            String s = "[";
-            Node temp = first;
-            while (temp != null) {
-                s += temp.num + ", ";
-                temp = temp.next;
+    public String toString() {
+        if (size == 0) {
+            return "[]";
+        } else {
+            String str = "[";
+            Node num2 = first;
+            while (num2 != null) {
+                str += num2.num + ", ";
+                num2 = num2.next;
             }
-            return s.substring(0, s.length() - 2) + "]";
+            return str.substring(0, str.length() - 2) + "]";
         }
-        return "[]";
     }
 }
 /**
@@ -166,16 +163,16 @@ public final class Solution {
             switch (line[0]) {
             case "pushLeft":
                 link.pushLeft(Integer.parseInt(line[1]));
-                System.out.println(link.display());
+                System.out.println(link.toString());
                 break;
             case "pushRight":
                 link.pushRight(Integer.parseInt(line[1]));
-                System.out.println(link.display());
+                System.out.println(link.toString());
                 break;
             case "popRight":
                 if (!link.isEmpty()) {
                     link.popRight();
-                    System.out.println(link.display());
+                    System.out.println(link.toString());
                 } else {
                     System.out.println("Deck is empty");
                 }
@@ -183,7 +180,7 @@ public final class Solution {
             case "popLeft":
                 if (!link.isEmpty()) {
                     link.popLeft();
-                    System.out.println(link.display());
+                    System.out.println(link.toString());
                 } else {
                     System.out.println("Deck is empty");
                 }
