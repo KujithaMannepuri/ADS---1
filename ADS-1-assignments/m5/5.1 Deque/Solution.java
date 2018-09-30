@@ -51,9 +51,9 @@ class Node {
      */
     public boolean isEmpty() {
         if (size == 0) {
-			return true;
-		}
-		return false;
+            return true;
+        }
+        return false;
     }
     /**
      * Pushes to right.
@@ -62,7 +62,7 @@ class Node {
      */
     public void pushRight(final int num) {
         if (last == null) {
-        	Node obj = new Node();
+            Node obj = new Node();
             last = obj;
             last.num = num;
             last.next = null;
