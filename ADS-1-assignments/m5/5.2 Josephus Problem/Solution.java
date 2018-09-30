@@ -50,7 +50,10 @@ class Deque {
      * @return     True if empty, False otherwise.
      */
     public boolean isEmpty() {
-        return (first == null);
+        if (first == null) {
+            return true;
+        }
+        return false;
     }
     /**
      * Method to push element to right.
