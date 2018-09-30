@@ -58,7 +58,7 @@ class Deque {
     /**
      * Method to push element to right.
      *
-     * @param      data  The data
+     * @param data  The data
      */
     public void popRight( int data) {
         if (last == null) {
@@ -123,7 +123,7 @@ public final class Solution {
                 str += deq.popLeft() + " ";
             }
             System.out.print(str.substring(0, str.length() - 1));
-            //System.out.println();
+            System.out.println();
         }
     }
 }
