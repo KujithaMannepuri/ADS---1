@@ -24,7 +24,7 @@ class Deque {
 		// 	return true;
 		// }
 		// return false;
-		return first == null;
+		return (size == 0);
 	}
 
 	public void pushRight(int num1) {
@@ -106,16 +106,16 @@ class Solution {
 			break;
 			case "pushRight":
 			deq.pushRight(Integer.parseInt(token[1]));
-			System.out.println(deq);
+			System.out.println(deq.toString());
 			break;
 			case "pushLeft":
 			deq.pushLeft(Integer.parseInt(token[1]));
-			System.out.println(deq);
+			System.out.println(deq.toString());
 			break;
 			case "popRight":
 			if (!deq.isEmpty()) {
 				deq.popRight();
-				System.out.println(deq);
+				System.out.println(deq.toString());
 			} else {
 				System.out.println("Deck is empty");
 			}
@@ -123,7 +123,7 @@ class Solution {
 			case "popLeft":
 			if (!deq.isEmpty()) {
 				deq.popLeft();
-				System.out.println(deq);
+				System.out.println(deq.toString());
 			} else {
 				System.out.println("Deck is empty");
 			}
