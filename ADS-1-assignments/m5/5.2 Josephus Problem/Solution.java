@@ -1,31 +1,31 @@
 import java.util.Scanner;
-// /**
-//  * Class for deque.
-//  */
+/**
+ * Class for deque.
+ */
 class Deque {
-    // /**
-    //  * {Variable first of type node}.
-    //  */
+    /**
+     * Variable first.
+     */
     private Node first;
-    // /**
-    //  * {Variable last of type node}.
-    //  */
+    /**
+     * Variable last.
+     */
     private Node last;
-    // /**
-    //  * {Variable size of type integer}.
-    //  */
+    /**
+     * Variable size.
+     */
     private int size;
     /**
-     * Constructs the object.
+     * Constructor.
      */
     Deque() {
         first = null;
         last = null;
         size = 0;
     }
-    // /**
-    //  * Class for node.
-    //  */
+    /**
+     * Class for node.
+     */
     class Node {
         /**
          * variable data.
@@ -89,24 +89,24 @@ class Deque {
     }
     
 }
-// /**
-//  * Class for solution.
-//  */
+/**
+ * Class for solution.
+ */
 public final class Solution {
-    // /**
-    //  * constructor.
-    //  */
+    /**
+     * constructor.
+     */
     private Solution() {
-        //Empty.
+    
     }
-    // /**
-    //  * main.
-    //  *
-    //  * @param      args  The arguments
-    //  */
+    /**
+     * main.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
-        int num = Integer.parseInt(sc.nextLine());
+        //int num = Integer.parseInt(sc.nextLine());
         while (sc.hasNext()) {
             String[] token = sc.nextLine().split(" ");
             int num1 = Integer.parseInt(token[0]);
