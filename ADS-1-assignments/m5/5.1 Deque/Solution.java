@@ -62,18 +62,16 @@ class Deque {
      */
     public void pushRight(final int num) {
         if (last == null) {
-        	Node obj = new Node();
-            obj = last;
-            obj.num = num;
-            obj.next = null;
-            first = obj;
+            last = new Node();
+            last.num = num;
+            last.next = null;
+            first = last;
         }   else {
             Node temp = last;
-            Node obj = new Node();
-            obj = last;
-            obj.num = num;
-            obj.next = null;
-            temp.next = obj;
+            last = new Node();
+            last.num = num;
+            last.next = null;
+            temp.next = last;
         }
         size++;
     }
@@ -85,19 +83,15 @@ class Deque {
     public void pushLeft(final int num) {
         if (first == null) {
             //Node oldfirst = first;
-            Node obj = new Node();
-            //first = new Node();
-            obj = first;
-            obj.num = num;
-            obj.next = null;
-            last = obj;
+            first = new Node();
+            first.num = num;
+            first.next = null;
+            last = first;
         } else {
-            Node temp = first;
-            Node obj = new Node();
-            //first = new Node();
-            obj = first;
-            obj.num = num;
-            obj.next = temp;
+            Node oldlast = first;
+            first = new Node();
+            first.num = num;
+            first.next = oldlast;
         }
         size++;
     }
