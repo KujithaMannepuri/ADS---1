@@ -60,7 +60,7 @@ class Deque {
      *
      * @param data  The data
      */
-    public void popRight( int data) {
+    public void popRight(final int data) {
         if (last == null) {
             last = new Node();
             last.data = data;
@@ -86,8 +86,7 @@ class Deque {
             return temp;
         }
         return last.data;
-    }
-    
+    }   
 }
 /**
  * Class for solution.
@@ -97,7 +96,6 @@ public final class Solution {
      * constructor.
      */
     private Solution() {
-    
     }
     /**
      * main.
