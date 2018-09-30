@@ -1,136 +1,196 @@
 import java.util.Scanner;
 
+/**
+     * Class for node.
+     */
 class Node {
-	int num;
-	Node next;
-}
+        /**
+         * variable.
+         */
+         int item;
+        /**
+         * variable.
+         */
+         Node next;
+    }
+/**
+ * Class for deque.
+ */
 class Deque {
-	Node first;
-	Node last;
-	int size;
+    /**
+     * variable.
+     */
+    private Node first;
+    /**
+     * last variable.
+     */
+    private Node last;
+    /**
+     * count variable.
+     */
+    private int count;
+    /**
+     * Constructs the object.
+     */
+    Deque() {
+        first = null;
+        last = null;
+        count = 0;
+    }
 
-	Deque() {
-		first = null;
-		last = null;
-		size = 0;
-	}
-
-	public int size() {
-		return size;
-	}
-
-	public boolean isEmpty() {
-		// if (size == 0) {
-		// 	return true;
-		// }
-		// return false;
-		return (size == 0);
-	}
-
-	public void pushRight(int num1) {
-		if (last == null) {
-			Node obj = new Node();
-			obj.num = num1;
-			obj.next = null;
-			//first = obj;
-		} else {
-			Node temp = last;
-			Node obj = new Node();
-			obj.num = num1;
-			obj.next = null;
-			temp.next = obj;
-		}
-		size++;
-	}
-	public void pushLeft(int num1) {
-		if (first == null) {
-			Node obj = new Node();
-			obj.num = num1;
-			obj.next = null;
-			last = obj;
-		} else {
-			Node temp = first;
-			Node obj = new Node();
-			obj.num = num1;
-			//obj.next = null;
-			obj.next = temp;
-		}
-		size++;
-	}
-	public void popRight() {
-		if (last != null) {
-			Node temp = first;
-			while (temp.next.next != null) {
-				temp = temp.next;
-			}
-			temp.next = null;
-			last = temp;
-			size--;
-		}
-	}
-	public void popLeft() {
-		if (first != null) {
-			first = first.next;
-			size--;
-		}
-	}
-	public String toString() {
-        if (size == 0) {
-            return "[]";
+    
+    
+    /**
+     * Determines if empty.
+     *
+     * @return     True if empty, False otherwise.
+     */
+    public boolean isEmpty() {
+        return first == null;
+    }
+    /**
+     * size.
+     *
+     * @return count.
+     */
+    public int size() {
+        return count;
+    }
+    /**
+     * Pushes a left.
+     *
+     * @param      item  The item
+     */
+    public void pushLeft(final int item) {
+        if (first == null) {
+            //Node oldfirst = first;
+            first = new Node();
+            first.item = item;
+            first.next = null;
+            last = first;
         } else {
+            Node oldlast = first;
+            first = new Node();
+            first.item = item;
+            first.next = oldlast;
+        }
+        count++;
+    }
+    /**
+     * Pushes a right.
+     *
+     * @param      item  The item
+     */
+    public void pushRight(final int item) {
+        if (last == null) {
+            last = new Node();
+            last.item = item;
+            last.next = null;
+            first = last;
+        }   else {
+            Node temp = last;
+            last = new Node();
+            last.item = item;
+            last.next = null;
+            temp.next = last;
+        }
+        count++;
+    }
+    /**
+     * pop from left.
+     */
+    public void popLeft() {
+        if (first != null) {
+            first = first.next;
+            count--;
+        }
+    }
+    /**
+     * pop from right.
+     */
+    public void popRight() {
+        if (last != null) {
+            Node temp = first;
+            while (temp.next.next != null) {
+                temp = temp.next;
+            }
+            temp.next = null;
+            last = temp;
+            count--;
+        }
+    }
+    /**
+     * to string to display.
+     *
+     * @return  string.
+     */
+    public String display() {
+        if (count != 0) {
             String s = "[";
-            Node num1 = first;
-            while (num1 != null) {
-                s += num1.num + ", ";
-                num1 = num1.next;
+            Node temp = first;
+            while (temp != null) {
+                s += temp.item + ", ";
+                temp = temp.next;
             }
             return s.substring(0, s.length() - 2) + "]";
         }
+        return "[]";
     }
 }
+/**
+ * Class for solution.
+ */
+public final class Solution {
+    /**
+     *constructs object.
+     */
+    private Solution() {
 
-class Solution {
-	Solution() {
+    }
+    /**
+     * main method.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n;
+        Deque link = new Deque();
+        n = Integer.parseInt(sc.nextLine());
+        for (int i = 0; i < n; i++) {
+            String[] line = sc.nextLine().split(" ");
+            switch (line[0]) {
+            case "pushLeft":
+                link.pushLeft(Integer.parseInt(line[1]));
+                System.out.println(link.display());
+                break;
+            case "pushRight":
+                link.pushRight(Integer.parseInt(line[1]));
+                System.out.println(link.display());
+                break;
+            case "popRight":
+                if (!link.isEmpty()) {
+                    link.popRight();
+                    System.out.println(link.display());
+                } else {
+                    System.out.println("Deck is empty");
+                }
+                break;
+            case "popLeft":
+                if (!link.isEmpty()) {
+                    link.popLeft();
+                    System.out.println(link.display());
+                } else {
+                    System.out.println("Deck is empty");
+                }
 
-	}
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		int ip;
-		Deque deq = new Deque();
-		ip = Integer.parseInt(scan.nextLine());
-		for (int i = 0; i < ip; i++) {
-			String[] token = scan.nextLine().split(" ");
-			switch (token[0]) {
-			case "size":
-			System.out.println(deq.size());
-			break;
-			case "pushRight":
-			deq.pushRight(Integer.parseInt(token[1]));
-			System.out.println(deq.toString());
-			break;
-			case "pushLeft":
-			deq.pushLeft(Integer.parseInt(token[1]));
-			System.out.println(deq.toString());
-			break;
-			case "popRight":
-			if (!deq.isEmpty()) {
-				deq.popRight();
-				System.out.println(deq.toString());
-			} else {
-				System.out.println("Deck is empty");
-			}
-			break;
-			case "popLeft":
-			if (!deq.isEmpty()) {
-				deq.popLeft();
-				System.out.println(deq.toString());
-			} else {
-				System.out.println("Deck is empty");
-			}
-			break;
-			default:
-			break;
-			}
-		}
-	}
+                break;
+            case "size":
+                System.out.println(link.size());
+            default:
+                break;
+            }
+
+        }
+    }
 }
