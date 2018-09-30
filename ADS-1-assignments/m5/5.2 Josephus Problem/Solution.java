@@ -86,7 +86,7 @@ class Deque {
             return temp;
         }
         return last.data;
-    }   
+    }
 }
 /**
  * Class for solution.
