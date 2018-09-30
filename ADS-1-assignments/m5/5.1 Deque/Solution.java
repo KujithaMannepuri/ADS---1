@@ -75,17 +75,18 @@ class Deque {
 		}
 	}
 	public String toString() {
-		if (size != 0) {
-			String str = "[";
-			Node temp = first;
-			while (temp != null) {
-				str = str + temp.num + ",";
-				temp = temp.next;
-			}
-			return str.substring(0, str.length() - 2) + "]";
-		}
-		return "[]";
-	}
+        if (size == 0) {
+            return "[]";
+        } else {
+            String s = "[";
+            Node num1 = first;
+            while (num1 != null) {
+                s += num1.num + ", ";
+                num1 = num1.next;
+            }
+            return s.substring(0, s.length() - 2) + "]";
+        }
+    }
 }
 
 class Solution {
