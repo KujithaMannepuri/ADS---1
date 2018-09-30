@@ -84,15 +84,14 @@ class Deque {
      */
     public void pushLeft(final int num) {
         if (first == null) {
-            Node obj = first;
-            first = obj;
+            //Node oldfirst = first;
+            first = new Node();
             first.num = num;
             first.next = null;
             last = first;
         } else {
             Node oldlast = first;
-            Node obj = new Node();
-            first = obj;
+            first = new Node();
             first.num = num;
             first.next = oldlast;
         }
