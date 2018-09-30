@@ -1,17 +1,5 @@
 import java.util.Scanner;
-/**
- * node class.
- */
-class Node {
-        /**
-         * variable num.
-         */
-        public int num;
-        /**
-         * variable next.
-         */
-        public Node next;
-    }
+
 /**
  * Class for deque.
  */
@@ -35,6 +23,19 @@ class Deque {
         first = null;
         last = null;
         size = 0;
+    }
+    /**
+ * node class.
+ */
+class Node {
+        /**
+         * variable num.
+         */
+        private int num;
+        /**
+         * variable next.
+         */
+        private Node next;
     }
     /**
      * size.
