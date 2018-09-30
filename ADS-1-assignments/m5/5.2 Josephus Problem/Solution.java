@@ -103,7 +103,7 @@ public final class Solution {
      */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
-        //int num = Integer.parseInt(sc.nextLine());
+        int num = Integer.parseInt(sc.nextLine());
         while (sc.hasNext()) {
             String[] token = sc.nextLine().split(" ");
             int num1 = Integer.parseInt(token[0]);
