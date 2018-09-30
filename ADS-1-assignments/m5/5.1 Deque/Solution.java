@@ -20,10 +20,11 @@ class Deque {
 	}
 
 	public boolean isEmpty() {
-		if (size == 0) {
-			return true;
-		}
-		return false;
+		// if (size == 0) {
+		// 	return true;
+		// }
+		// return false;
+		return first == null;
 	}
 
 	public void pushRight(int num1) {
