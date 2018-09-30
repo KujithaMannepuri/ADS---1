@@ -32,7 +32,7 @@ class Deque {
 			Node obj = new Node();
 			obj.num = num1;
 			obj.next = null;
-			first = last;
+			//first = obj;
 		} else {
 			Node temp = last;
 			Node obj = new Node();
@@ -47,13 +47,13 @@ class Deque {
 			Node obj = new Node();
 			obj.num = num1;
 			obj.next = null;
-			last = first;
+			last = obj;
 		} else {
 			Node temp = first;
 			Node obj = new Node();
 			obj.num = num1;
-			obj.next = null;
-			temp.next = obj;
+			//obj.next = null;
+			obj.next = temp;
 		}
 		size++;
 	}
