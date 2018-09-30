@@ -62,13 +62,15 @@ class Deque {
      */
     public void pushRight(final int num) {
         if (last == null) {
-            last = new Node();
+        	Node obj = new Node();
+            last = obj;
             last.num = num;
             last.next = null;
             first = last;
         }   else {
             Node temp = last;
-            last = new Node();
+            Node obj = new Node();
+            last = obj;
             last.num = num;
             last.next = null;
             temp.next = last;
