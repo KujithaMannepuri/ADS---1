@@ -5,11 +5,11 @@ import java.util.Scanner;
      */
 class Node {
         /**
-         * variable.
+         * variable num.
          */
-         int item;
+         int num;
         /**
-         * variable.
+         * variable next.
          */
          Node next;
     }
@@ -26,16 +26,16 @@ class Deque {
      */
     private Node last;
     /**
-     * count variable.
+     * size variable.
      */
-    private int count;
+    private int size;
     /**
      * Constructs the object.
      */
     Deque() {
         first = null;
         last = null;
-        count = 0;
+        size = 0;
     }
 
     
@@ -46,55 +46,59 @@ class Deque {
      * @return     True if empty, False otherwise.
      */
     public boolean isEmpty() {
-        return first == null;
-    }
+        if (size == 0) {
+			return true;
+		}
+		return false;
+	}
+    
     /**
      * size.
      *
-     * @return count.
+     * @return size.
      */
     public int size() {
-        return count;
+        return size;
     }
     /**
      * Pushes a left.
      *
-     * @param      item  The item
+     * @param      num  The num
      */
-    public void pushLeft(final int item) {
+    public void pushLeft(final int num) {
         if (first == null) {
             //Node oldfirst = first;
             first = new Node();
-            first.item = item;
+            first.num = num;
             first.next = null;
             last = first;
         } else {
             Node oldlast = first;
             first = new Node();
-            first.item = item;
+            first.num = num;
             first.next = oldlast;
         }
-        count++;
+        size++;
     }
     /**
      * Pushes a right.
      *
-     * @param      item  The item
+     * @param      num  The num
      */
-    public void pushRight(final int item) {
+    public void pushRight(final int num) {
         if (last == null) {
             last = new Node();
-            last.item = item;
+            last.num = num;
             last.next = null;
             first = last;
         }   else {
             Node temp = last;
             last = new Node();
-            last.item = item;
+            last.num = num;
             last.next = null;
             temp.next = last;
         }
-        count++;
+        size++;
     }
     /**
      * pop from left.
@@ -102,7 +106,7 @@ class Deque {
     public void popLeft() {
         if (first != null) {
             first = first.next;
-            count--;
+            size--;
         }
     }
     /**
@@ -116,7 +120,7 @@ class Deque {
             }
             temp.next = null;
             last = temp;
-            count--;
+            size--;
         }
     }
     /**
@@ -125,11 +129,11 @@ class Deque {
      * @return  string.
      */
     public String display() {
-        if (count != 0) {
+        if (size != 0) {
             String s = "[";
             Node temp = first;
             while (temp != null) {
-                s += temp.item + ", ";
+                s += temp.num + ", ";
                 temp = temp.next;
             }
             return s.substring(0, s.length() - 2) + "]";
