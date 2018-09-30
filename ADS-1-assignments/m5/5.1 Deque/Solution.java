@@ -6,15 +6,15 @@ class Node {
         /**
          * variable num.
          */
-        int num;
+        public int num;
         /**
          * variable next.
          */
-        Node next;
+        public Node next;
     }
-// /**
-//  * Class for deque.
-//  */
+/**
+ * Class for deque.
+ */
 class Deque {
     /**
      * variable first.
