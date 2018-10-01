@@ -146,8 +146,8 @@ class Solution {
 			ste.printStack();
 			break;
 			default:
-			//System.out.println();
-				ste = new Steque();
+			System.out.println();
+			ste = new Steque();
 			break;
 		}
 	}
