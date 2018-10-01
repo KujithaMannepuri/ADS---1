@@ -1,6 +1,14 @@
 import java.util.Scanner;
 
+/**
+ * Class for solution.
+ */
 class Solution {
+	/**
+	 * main function.
+	 *
+	 * @param args  The arguments
+	 */
 	public static void main(final String[] args) {
 	Scanner sc = new Scanner(System.in);
 	Steque ste = new Steque();
@@ -18,10 +26,10 @@ class Solution {
 				ste.printStack();
 			break;
 			case "pop":
-			try{
+			try {
 			ste.pop();
 			ste.printStack();
-			} catch(Exception e){
+			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
 			break;
