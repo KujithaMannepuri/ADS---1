@@ -123,11 +123,11 @@ class Solution {
 	String num = sc.nextLine();
 	while (sc.hasNext()) {
 		String[] token = sc.nextLine().split(" ");
-		if(token.length==1 && !token[0].equals("pop")){
-			ste = new Steque();
-			System.out.println();
-			continue;
-		}
+		// if(token.length==1 && !token[0].equals("pop")){
+		// 	ste = new Steque();
+		// 	System.out.println();
+		// 	continue;
+		// }
 		switch (token[0]) {
 			case "push":
 				ste.push(token[1]);
@@ -146,7 +146,8 @@ class Solution {
 			ste.printStack();
 			break;
 			default:
-				//ste = new Steque();
+			System.out.println();
+				ste = new Steque();
 			break;
 		}
 	}
