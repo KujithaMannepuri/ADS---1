@@ -17,6 +17,7 @@ class linkedList {
 		last = new Node();
 		size = 0;
 	}
+	/** This insert method takes the time complexity O(1) and takes constant time.*/ 
 	void insert(String item) {
 		Node obj = new Node();
 		obj.data = item;
@@ -29,8 +30,8 @@ class linkedList {
 		obj.next = first;
 		first = obj;
 		size++;
-
 	}
+	/* This delete method takes the time complexity O(1) and takes constant time.*/
 	String delete() throws Exception {
 		if(size() == 0){
 			//try{
@@ -46,6 +47,7 @@ class linkedList {
 		size--;
 		return data;
 	}
+	/* The time complexity for enque method is O(1) takes constant time.*/
 	void enque(String item) {
 		//Node obj = new Node(item);
 		if(size == 0) {
@@ -65,12 +67,14 @@ class linkedList {
 		 }
 		size++;
 	}
+	/* The time complexity for isEmpty method is O(1) takes constant time.*/
 	boolean isEmpty() {
 		if(size == 0) {
 			return true;
 		}
 			return false;
 	}
+	/* The time complexity for size method is O(1) takes constant time.*/
 	int size() {
 		return size;
 	}
@@ -80,22 +84,27 @@ class Steque {
 	Steque() {
 		steq = new linkedList();
 	}
-
+	/* The time complexity for push method is O(1) takes constant time.*/
 	void push(String item) {
 		steq.insert(item);
 	}
+	/* The time complexity for pop method is O(1) takes constant time.*/
 	String pop() throws Exception {
 		return steq.delete();
 	}
+	/* The time complexity for enque method is O(1) takes constant time.*/
 	void enqueue(String item) {
 	 	steq.enque(item);
 	}
+	/* The time complexity for isEmpty method is O(1) takes constant time.*/
 	boolean isEmpty() {
 		return steq.isEmpty();
 	}
+	/* The time complexity for size method is O(1) takes constant time.*/
 	int size() {
 		return steq.size();
 	}
+	/** The time complexity for printStack method is O(N).*/
 	void printStack() {
 		Node temp = steq.first;
 		// if (size() == 0) {
