@@ -6,7 +6,7 @@ class Solution {
     /**
      * constructor.
      */
-    Solution(){
+    private Solution() {
 
     }
     /**
