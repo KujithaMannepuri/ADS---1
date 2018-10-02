@@ -16,13 +16,13 @@ class Team implements Comparable<Team> {
 	}
 	public int compareTo(Team game) {
 		if (this.wins.compareTo(game.wins) < 0) {
-			return 1;
-		}
-		if (this.losses.compareTo(game.losses) < 0) {
 			return -1;
 		}
-		if (this.draws.compareTo(game.draws) < 0) {
+		if (this.losses.compareTo(game.losses) < 0) {
 			return 1;
+		}
+		if (this.draws.compareTo(game.draws) < 0) {
+			return -1;
 		}
 		return 0;
 	}
@@ -46,7 +46,7 @@ class SelectionSort {
 			for (int j = i + 1; j < size; j++) {
 				if (obj[j].compareTo(obj[min]) > 0) {
 					min = j;
-					// System.out.println("min is "+min);
+					//System.out.println("min is "+min);
 				}
 				//System.out.println("min is "+min);
 			}
