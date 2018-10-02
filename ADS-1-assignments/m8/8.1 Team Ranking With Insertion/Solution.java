@@ -16,13 +16,13 @@ class Team implements Comparable<Team> {
 	}
 	public int compareTo(Team game) {
 		if (this.wins.compareTo(game.wins) < 0) {
-			return 1;
-		}
-		if (this.losses.compareTo(game.losses) < 0) {
 			return -1;
 		}
-		if (this.draws.compareTo(game.draws) < 0) {
+		if (this.losses.compareTo(game.losses) < 0) {
 			return 1;
+		}
+		if (this.draws.compareTo(game.draws) < 0) {
+			return -1;
 		}
 		return 0;
 	}
