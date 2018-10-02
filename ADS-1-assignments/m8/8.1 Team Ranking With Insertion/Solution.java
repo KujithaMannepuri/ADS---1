@@ -53,7 +53,7 @@ class SelectionSort {
 		for (int i = 0; i < size; i++) {
 			min = i;
 			for (int j = i + 1; j < size; j++) {
-				if (obj[min].compareTo(obj[j]) > 0) {
+				if (obj[j].compareTo(obj[min]) > 0) {
 					min = j;	
 				}
 			}
