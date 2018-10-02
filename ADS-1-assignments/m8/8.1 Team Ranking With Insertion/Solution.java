@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 class Team implements Comparable<Team> {
 	private String teamName;
-	String wins;
-	String losses;
-	String draws;
-	Team(String tName, String w, String l, String d) {
+	int wins;
+	int losses;
+	int draws;
+	Team(String tName, int w, int l, int d) {
 		this.teamName = tName;
 		this.wins = w;
 		this.losses = l;
@@ -15,14 +15,23 @@ class Team implements Comparable<Team> {
 		return teamName;
 	}
 	public int compareTo(Team game) {
-		if (this.wins.compareTo(game.wins) < 0) {
+		if (this.wins > game.wins) {
 			return 1;
 		}
-		if (this.losses.compareTo(game.losses) < 0) {
+		if (this.wins < game.wins) {
 			return -1;
 		}
-		if (this.draws.compareTo(game.draws) < 0) {
+		if (this.losses > game.losses) {
+			return -1;
+		}
+		if (this.losses < game.losses) {
 			return 1;
+		}
+		if (this.draws > game.draws) {
+			return 1;
+		}
+		if (this.draws < game.draws) {
+			return -1;
 		}
 		return 0;
 	}
@@ -41,14 +50,12 @@ class SelectionSort {
 	}
 	void sorting() {
 		int min;
-		for (int i = 0; i < size-1; i++) {
+		for (int i = 0; i < size; i++) {
 			min = i;
 			for (int j = i + 1; j < size; j++) {
 				if (obj[min].compareTo(obj[j]) > 0) {
-					min = j;
-					//System.out.println("min is "+min);
+					min = j;	
 				}
-				//System.out.println("min is "+min);
 			}
 
 			Team temp = obj[min];
@@ -71,8 +78,8 @@ class Solution{
 		SelectionSort ip = new SelectionSort();
 		while (sc.hasNext()) {
 			String[] token = sc.nextLine().split(",");
-			Team games = new Team(token[0], token[1],
-				token[2], token[3]);
+			Team games = new Team(token[0], Integer.parseInt(token[1]),
+				Integer.parseInt(token[2]), Integer.parseInt(token[3]));
 			ip.add(games);
 		}
 		ip.sorting();
