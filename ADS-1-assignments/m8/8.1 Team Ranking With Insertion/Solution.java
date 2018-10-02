@@ -48,12 +48,15 @@ class SelectionSort {
 	void add(Team o){
 		obj[size++] = o;
 	}
+	boolean less(Team[] obj, int i, int j) {
+		return obj[i].compareTo(obj[j]) > 0;
+	}
 	void sorting() {
 		int min;
 		for (int i = 0; i < size; i++) {
 			min = i;
 			for (int j = i + 1; j < size; j++) {
-				if (obj[j].compareTo(obj[min]) > 0) {
+				if (less(obj, j, min)) {
 					min = j;	
 				}
 			}
