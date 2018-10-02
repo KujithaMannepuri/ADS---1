@@ -52,15 +52,18 @@ class InsertionSort {
 	void sorting() {
 		int min;
 		for (int i = 0; i < size; i++) {
-			Team temp = obj[i];
-			int j = 0;
-			for (j = i + 1; j < 0; j++) {
+			// Team temp = obj[i];
+			// int j = 0;
+			for (int j = i + 1; j < 0; j++) {
 				if (less(obj, j - 1, j)) {
-					obj[j + 1] = obj[j];
-					j -= 1;
+					// obj[j + 1] = obj[j];
+					// j -= 1;
+					Team temp = obj[j-1];
+					obj[j-1] = obj[j];
+					obj[j] = temp;
 				}
 			}
-			obj[j + 1] = temp;
+			//obj[j + 1] = temp;
 		}
 	}
 	void tostring() {
