@@ -44,7 +44,7 @@ class SelectionSort {
 		for (int i = 0; i < size-1; i++) {
 			min = i;
 			for (int j = i + 1; j < size; j++) {
-				if (obj[j].compareTo(obj[min]) > 0) {
+				if (obj[min].compareTo(obj[j]) > 0) {
 					min = j;
 					//System.out.println("min is "+min);
 				}
