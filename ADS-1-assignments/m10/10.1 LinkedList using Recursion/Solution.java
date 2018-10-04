@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * node class.
  */
-class Node { 
+ class Node { 
  String data;
  Node next;
 
@@ -12,7 +12,7 @@ class Node {
   *
   * @param      data  The data
   */
- Node (String data) {
+  Node (final String data) {
  	this.data = data;
  }
 }
@@ -20,7 +20,7 @@ class Node {
 /**
  * List of linkeds.
  */
-class LinkedList {
+ class LinkedList {
 	Node head;
 	int size;
 
@@ -64,7 +64,7 @@ class LinkedList {
 	 *
 	 * @throws     Exception  { exception_description }
 	 */
-	void insertAt(int pos, String data) throws Exception {
+	public void insertAt(final int pos, final String data) throws Exception {
 		if (pos < 0 || pos > size) {
 			throw new Exception();
 		}
@@ -88,7 +88,7 @@ class LinkedList {
 	 *
 	 * @return     { description_of_the_return_value }
 	 */
-	Node insertAt (int pos, Node first, Node obj, int count) {
+	public Node insertAt (final int pos, final Node first, final Node obj, final int count) {
 		if (pos == count) {
 			obj.next = first;
 			size++;
@@ -101,7 +101,7 @@ class LinkedList {
 	/**
 	 * { function_description }
 	 */
-	void reverse() {
+	public void reverse() {
 		reverse (null, head);
 	}
 
@@ -111,7 +111,7 @@ class LinkedList {
 	 * @param      previous  The previous
 	 * @param      current   The current
 	 */
-	void reverse(Node previous, Node current) {
+	public void reverse(final Node previous, final Node current) {
 		if (current != null) {
 			reverse(current, current.next);
 			current.next = previous;
@@ -123,7 +123,7 @@ class LinkedList {
 	/**
 	 * { function_description }
 	 */
-	void tostring() {
+	public void tostring() {
 		Node temp = head;
 		String str = "";
 		while (temp != null) {
@@ -137,28 +137,41 @@ class LinkedList {
 /**
  * solution class.
  */
-class Solution {
-	public static void main(String[] args) {
+public final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	private Solution() {
+
+	}
+	/**
+	 * { function_description }
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		Scanner sc = new Scanner(System.in);
-		LinkedList ll = new LinkedList();
+		LinkedList list = new LinkedList();
 		while(sc.hasNextLine()) {
 			String[] token = sc.nextLine().split(" ");
 			switch (token[0]) {
 				case "insertAt":
 				try{
-				ll.insertAt(Integer.parseInt(token[1]), token[2]);
-				ll.tostring();
+				list.insertAt(Integer.parseInt(token[1]), token[2]);
+				list.tostring();
 			} catch (Exception e) {
 				System.out.println("Can't insert at this position.");
 			}
 				break;
 				case "reverse":
 				try {
-				ll.reverse();
-				ll.tostring();
+				list.reverse();
+				list.tostring();
 			} catch (Exception e) {
 				System.out.println("No elements to reverse.");
 			}
+				default:
+				break;
 			}
 		}
 	}
