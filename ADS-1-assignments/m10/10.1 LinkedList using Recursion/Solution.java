@@ -99,7 +99,7 @@ class Solution {
 				ll.insertAt(Integer.parseInt(ip[1]), ip[2]);
 				ll.display();
 			} catch (Exception e) {
-				System.out.println("can't insert at this position.");
+				System.out.println("Can't insert at this position.");
 			}
 				break;
 				case "reverse":
