@@ -44,6 +44,7 @@ Starting audit...
 [ERROR] F:\ADS---1\ADS-1-assignments\m10\10.1 LinkedList using Recursion\Solution.java:96: switch without "default" clause. [MissingSwitchDefault]
 [ERROR] F:\ADS---1\ADS-1-assignments\m10\10.1 LinkedList using Recursion\Solution.java:98:36: 'try' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\ADS---1\ADS-1-assignments\m10\10.1 LinkedList using Recursion\Solution.java:98:36: '{' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] F:\ADS---1\ADS-1-assignments\m10\10.1 LinkedList using Recursion\Solution.java:99: Line is longer than 80 characters (found 82). [LineLength]
 [ERROR] F:\ADS---1\ADS-1-assignments\m10\10.1 LinkedList using Recursion\Solution.java:102: Line is longer than 80 characters (found 85). [LineLength]
 Audit done.
-Checkstyle ends with 46 errors.
+Checkstyle ends with 47 errors.

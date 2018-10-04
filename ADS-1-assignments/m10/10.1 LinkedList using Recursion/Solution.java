@@ -76,7 +76,7 @@ class LinkedList {
 		}
 	}
 
-	void display() {
+	void tostring() {
 		Node temp = head;
 		String str = "";
 		while (temp != null) {
@@ -92,12 +92,12 @@ class Solution {
 		Scanner sc = new Scanner(System.in);
 		LinkedList ll = new LinkedList();
 		while(sc.hasNextLine()) {
-			String[] ip = sc.nextLine().split(" ");
-			switch (ip[0]) {
+			String[] token = sc.nextLine().split(" ");
+			switch (token[0]) {
 				case "insertAt":
 				try{
-				ll.insertAt(Integer.parseInt(ip[1]), ip[2]);
-				ll.display();
+				ll.insertAt(Integer.parseInt(token[1]), token[2]);
+				ll.tostring();
 			} catch (Exception e) {
 				System.out.println("Can't insert at this position.");
 			}
@@ -105,7 +105,7 @@ class Solution {
 				case "reverse":
 				try {
 				ll.reverse();
-				ll.display();
+				ll.tostring();
 			} catch (Exception e) {
 				System.out.println("No elements to reverse.");
 			}
