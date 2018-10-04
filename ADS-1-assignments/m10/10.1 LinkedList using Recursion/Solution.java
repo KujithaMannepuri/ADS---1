@@ -3,8 +3,14 @@ import java.util.Scanner;
 /**
  * node class.
  */
- class Node { 
+ class Node {
+ 	/**
+ 	 * variable data.
+ 	 */
  String data;
+ /**
+  * variable next.
+  */
  Node next;
 
  /**
@@ -12,8 +18,8 @@ import java.util.Scanner;
   *
   * @param      data  The data
   */
-  Node (final String data) {
- 	this.data = data;
+  Node(final String val) {
+ 	this.data = val;
  }
 }
 
@@ -21,7 +27,13 @@ import java.util.Scanner;
  * List of linkeds.
  */
  class LinkedList {
+ 	/**
+ 	 * variable head.
+ 	 */
 	Node head;
+	/**
+	 * variable size.
+	 */
 	int size;
 
 	/**
@@ -55,7 +67,6 @@ import java.util.Scanner;
 	// 		count++;
 	// 	}
 	// }
-	
 	/**
 	 * insertAt function.
 	 *
@@ -64,7 +75,8 @@ import java.util.Scanner;
 	 *
 	 * @throws     Exception  { exception_description }
 	 */
-	public void insertAt(final int pos, final String data) throws Exception {
+	public void insertAt(final int pos,
+	final String data) throws Exception {
 		if (pos < 0 || pos > size) {
 			throw new Exception();
 		}
@@ -75,7 +87,7 @@ import java.util.Scanner;
 		// 	size++;
 		// 	return;
 		// }
-		head = insertAt (pos, head, obj, 0);
+		head = insertAt(pos, head, obj, 0);
 	}
 
 	/**
@@ -88,25 +100,26 @@ import java.util.Scanner;
 	 *
 	 * @return     { description_of_the_return_value }
 	 */
-	public Node insertAt (final int pos, final Node first, final Node obj, final int count) {
+	public Node insertAt(final int pos,
+final Node first, final Node obj, final int count) {
 		if (pos == count) {
 			obj.next = first;
 			size++;
 			return obj;
 		}
-		first.next = insertAt(pos, first.next, obj, count+1);
+		first.next = insertAt(pos, first.next, obj, count + 1);
 		return first;
 	}
 
 	/**
-	 * { function_description }
+	 * { function_description }.
 	 */
 	public void reverse() {
-		reverse (null, head);
+		reverse(null, head);
 	}
 
 	/**
-	 * { function_description }
+	 * { function_description }.
 	 *
 	 * @param      previous  The previous
 	 * @param      current   The current
@@ -121,13 +134,13 @@ import java.util.Scanner;
 	}
 
 	/**
-	 * { function_description }
+	 * { function_description }.
 	 */
 	public void tostring() {
 		Node temp = head;
 		String str = "";
 		while (temp != null) {
-			str += temp.data+", ";
+			str += temp.data + ", ";
 			temp = temp.next;
 		}
 		System.out.println(str.substring(0, str.length() - 2));
@@ -145,22 +158,22 @@ public final class Solution {
 
 	}
 	/**
-	 * { function_description }
+	 * { function_description }.
 	 *
 	 * @param      args  The arguments
 	 */
 	public static void main(final String[] args) {
 		Scanner sc = new Scanner(System.in);
 		LinkedList list = new LinkedList();
-		while(sc.hasNextLine()) {
+		while (sc.hasNextLine()) {
 			String[] token = sc.nextLine().split(" ");
 			switch (token[0]) {
 				case "insertAt":
-				try{
-				list.insertAt(Integer.parseInt(token[1]), token[2]);
+				try {
+list.insertAt(Integer.parseInt(token[1]), token[2]);
 				list.tostring();
 			} catch (Exception e) {
-				System.out.println("Can't insert at this position.");
+System.out.println("Can't insert at this position.");
 			}
 				break;
 				case "reverse":
