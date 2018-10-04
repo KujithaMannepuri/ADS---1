@@ -7,11 +7,20 @@ import java.util.Scanner;
     /**
      * variable data.
      */
- String data;
+ private String data;
+ public String getData() {
+    return this.data;
+ }
  /**
   * variable next.
   */
- Node next;
+ private Node next;
+ public Node getNext() {
+    return this.next;
+ }
+ public void setNext(Node item) {
+    this.next = item;
+ }
 
  /**
   * constructor.
@@ -30,11 +39,11 @@ import java.util.Scanner;
     /**
      * variable head.
      */
-    Node head;
+    private Node head;
     /**
      * variable size.
      */
-    int size;
+    private int size;
 
     /**
      * constructor.
@@ -103,11 +112,11 @@ import java.util.Scanner;
     public Node insertAt(final int pos,
 final Node first, final Node obj, final int count) {
         if (pos == count) {
-            obj.next = first;
+            obj.setNext(first);
             size++;
             return obj;
         }
-        first.next = insertAt(pos, first.next, obj, count + 1);
+        first.setNext(insertAt(pos, first.getNext(), obj, count + 1));
         return first;
     }
 
@@ -126,8 +135,9 @@ final Node first, final Node obj, final int count) {
      */
     public void reverse(final Node previous, final Node current) {
         if (current != null) {
-            reverse(current, current.next);
-            current.next = previous;
+            reverse(current, current.getNext());
+            Node temp = current.getNext();
+            temp = previous;
         } else {
             head = previous;
         }
@@ -140,8 +150,8 @@ final Node first, final Node obj, final int count) {
         Node temp = head;
         String str = "";
         while (temp != null) {
-            str += temp.data + ", ";
-            temp = temp.next;
+            str += temp.getData() + ", ";
+            temp = temp.getNext();
         }
         System.out.println(str.substring(0, str.length() - 2));
     }
