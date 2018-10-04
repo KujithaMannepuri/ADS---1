@@ -21,24 +21,39 @@ import java.util.Scanner;
   Node(final String val) {
     this.data = val;
  }
-
+ /**
+  * Gets the data.
+  *
+  * @return     The data.
+  */
  public String getData() {
     return data;
  }
-
+ /**
+  * Gets the next.
+  *
+  * @return     The next.
+  */
  public Node getNext() {
     return next;
  }
-
- public void setNext(Node n) {
-    next = n; 
+ /**
+  * Sets the next.
+  *
+  * @param      n     { next address }
+  */
+ public void setNext(final Node n) {
+    next = n;
  }
-
- public void setData(String s) {
+ /**
+  * Sets the data.
+  *
+  * @param      s     { the data }
+  */
+ public void setData(final String s) {
     data = s;
  }
 }
-
 /**
  * List of linkeds.
  */
