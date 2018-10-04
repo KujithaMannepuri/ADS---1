@@ -8,27 +8,34 @@ import java.util.Scanner;
      * variable data.
      */
  private String data;
- public String getData() {
-    return this.data;
- }
  /**
   * variable next.
   */
  private Node next;
- public Node getNext() {
-    return this.next;
- }
- public void setNext(Node item) {
-    this.next = item;
- }
 
  /**
   * constructor.
   *
-  * @param      val  The value.
+  * @param      val  The value
   */
   Node(final String val) {
     this.data = val;
+ }
+
+ public String getData() {
+    return data;
+ }
+
+ public Node getNext() {
+    return next;
+ }
+
+ public void setNext(Node n) {
+    next = n; 
+ }
+
+ public void setData(String s) {
+    data = s;
  }
 }
 
@@ -136,8 +143,7 @@ final Node first, final Node obj, final int count) {
     public void reverse(final Node previous, final Node current) {
         if (current != null) {
             reverse(current, current.getNext());
-            Node temp = current.getNext();
-            temp = previous;
+            current.setNext(previous);
         } else {
             head = previous;
         }
