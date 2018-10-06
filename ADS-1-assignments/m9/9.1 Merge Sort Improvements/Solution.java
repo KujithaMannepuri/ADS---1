@@ -1,72 +1,115 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-class Sorting {
-	private int midVal = 7;
-	int[] orgArray;
-	int[] aux;
-	
-	Sorting() {
+class MergeSort {
 
-	}
-	void sorting(int[] orgArray) {
-		this.orgArray = orgArray;
-		aux = new int[orgArray.length];
-		sorting(orgArray, 0, orgArray.length - 1);
-	}
-	void sorting(int[] orgArray, int lo, int hi) {
-		if (hi <= lo) {
-			return;
-		}
+    MergeSort() {
+       
+    }
 
-		int mid = lo + (hi - lo) / 2;
-		sorting(orgArray, lo, mid);
-		sorting(orgArray, mid + 1, hi);
-		mergeSort(orgArray, lo, mid, hi);
-	}
-	public  boolean less(int i, int j) {
-		return j > i;
-	}
-
-	void mergeSort(int[] orgArray, int lo, int mid, int hi) {
-		int i = lo;
-		int j = mid + 1;
-		for (int n = 0; n <= hi; n++) {
-			aux[n] = orgArray[n];
-		}
-		for (int n = lo; n <= hi; n++) {
-			if (i > mid) {
-				orgArray[n] = aux[j++];
-			}
-			else if (j > hi) {
-				orgArray[n] = aux[i++];
-			}
-			else if (less(aux[j], aux[i])) {
-				orgArray[n] = aux[j++];
-			}
-			else {
-				orgArray[n] = aux[i++];
-			}
-		}
-	}
-
-	public String toString() {
-		System.out.println(Arrays.toString(orgArray));
-		return "";
-	}
+    public void insertionSort(final Comparable[] a, final int low, final int hi) {
+        for (int i = low; i <= hi; i++) {
+            for (int j = i; j > low && less(a[j], a[j - 1]); j--) {
+                exchange(a, j, j - 1);
+            }
+        }
+    }
+    public boolean isSorted(final Comparable[] arr5) {
+        return isSorted(arr5, 0, arr5.length - 1);
+    }
+    
+    public boolean isSorted(final Comparable[] arr6,
+                            final int low, final int hi) {
+        for (int i = low + 1; i <= hi; i++) {
+            if (less(arr6[i], arr6[i - 1])) {
+                return false;
+            }
+        }
+        return true;
+    }
+    private final int s = 7;
+    public void sorting(final Comparable[] arr, final Comparable[] aux,
+                     final int low, final int hi) {
+        if (hi <= low + s) {
+            insertionSort(aux, low, hi);
+            System.out.println("Insertion sort method invoked...");
+            return;
+        }
+        int mid = low + (hi - low) / 2;
+        sorting(aux, arr, low, mid);
+        sorting(aux, arr, mid + 1, hi);
+        if (!less(arr[mid + 1], arr[mid])) {
+            for (int i = low; i <= hi; i++) {
+                aux[i] = arr[i];
+            }
+            System.out.println(
+                "Array is already sorted. So, skipped the call to merge...");
+            return;
+        }
+        msort(arr, aux, low, mid, hi);
+    }
+    
+    public void sorting(final Comparable[] arr) {
+        Comparable[] a = arr.clone();
+        sorting(a, arr, 0, arr.length - 1);
+        assert isSorted(arr);
+    }
+    public boolean less(final Comparable m, final Comparable n) {
+        return m.compareTo(n) < 0;
+    }
+    public void exchange(final Comparable[] orgArr,
+                     final int i, final int j) {
+        Comparable temp = orgArr[i];
+        orgArr[i] = orgArr[j];
+        orgArr[j] = temp;
+    }
+    public void msort( Comparable[] orgArr,  Comparable[] aux,
+                       int low,  int mid,  int hi) {
+        assert isSorted(orgArr, low, mid);
+        assert isSorted(orgArr, mid + 1, hi);
+        int i = low;
+        int j = mid + 1;
+        for (int k = low; k <= hi; k++) {
+            if (i > mid) {
+                aux[k] = orgArr[j++];
+            } else if (j > hi) {
+                aux[k] = orgArr[i++];
+            } else if (less(orgArr[j], orgArr[i])) {
+                aux[k] = orgArr[j++];
+            } else {
+                aux[k] = orgArr[i++];
+            }
+        }
+        assert isSorted(aux, low, hi);
+    }
+    
+    public String tostring(final Comparable[] orgarr) {
+        String s = "[";
+        int i;
+        for (i = 0; i < orgarr.length - 1; i++) {
+            s += orgarr[i] + ", ";
+        }
+        s += orgarr[i] + "]";
+        return s;
+    }
 }
-class Solution {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		while (sc.hasNext()) {
-			String[] ipArr = sc.nextLine().split(",");
-			int[] arr = new int[ipArr.length];
-			for (int i = 0; i < ipArr.length; i++) {
-				arr[i] = Integer.parseInt(ipArr[i]);
-			}
-			Sorting str = new Sorting();
-			str.sorting(arr);
-			System.out.println(str);
-		}
-	}
+
+public final class Solution {
+    
+    private Solution() {
+    }
+    
+    public static void main(final String[] args) {
+        Scanner sc = new Scanner(System.in);
+        MergeSort ip = new MergeSort();
+        while (sc.hasNext()) {
+            String[] ipArr = sc.nextLine().split(",");
+            ip.sorting(ipArr);
+            System.out.println(ip.tostring(ipArr));
+            System.out.println();
+        }
+    }
 }
+
+
+
