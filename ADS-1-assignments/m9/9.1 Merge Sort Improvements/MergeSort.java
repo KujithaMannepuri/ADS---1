@@ -6,30 +6,30 @@ class MergeSort {
        
     }
     
-    public void insertionSort(final Comparable[] a, final int low, final int hi) {
+    public void insertionSort(final Comparable[] arr, final int low, final int hi) {
         for (int i = low; i <= hi; i++) {
-            for (int j = i; j > low && less(a[j], a[j - 1]); j--) {
-                exchange(a, j, j - 1);
+            for (int j = i; j > low && less(arr[j], arr[j - 1]); j--) {
+                exchange(arr, j, j - 1);
             }
         }
     }
-    public boolean isSorted(final Comparable[] ar) {
-        return isSorted(ar, 0, ar.length - 1);
+    public boolean isSorted(final Comparable[] arr) {
+        return isSorted(arr, 0, arr.length - 1);
     }
     
-    public boolean isSorted(final Comparable[] ar1,
+    public boolean isSorted(final Comparable[] arr,
                             final int low, final int hi) {
         for (int i = low + 1; i <= hi; i++) {
-            if (less(ar1[i], ar1[i - 1])) {
+            if (less(arr[i], arr[i - 1])) {
                 return false;
             }
         }
         return true;
     }
-    private final int s = 7;
+    
     public void sorting(final Comparable[] arr, final Comparable[] aux,
                      final int low, final int hi) {
-        if (hi <= low + s) {
+        if (hi <= low + 7) {
             insertionSort(aux, low, hi);
             System.out.println("Insertion sort method invoked...");
             return;
@@ -56,14 +56,12 @@ class MergeSort {
     public boolean less(final Comparable m, final Comparable n) {
         return m.compareTo(n) < 0;
     }
-    public void exchange(final Comparable[] orgArr,
-                     final int i, final int j) {
+    public void exchange(final Comparable[] orgArr, final int i, final int j) {
         Comparable temp = orgArr[i];
         orgArr[i] = orgArr[j];
         orgArr[j] = temp;
     }
-    public void msort( Comparable[] orgArr,  Comparable[] aux,
-                       int low,  int mid,  int hi) {
+    public void msort( Comparable[] orgArr,  Comparable[] aux, int low,  int mid,  int hi) {
         assert isSorted(orgArr, low, mid);
         assert isSorted(orgArr, mid + 1, hi);
         int i = low;
