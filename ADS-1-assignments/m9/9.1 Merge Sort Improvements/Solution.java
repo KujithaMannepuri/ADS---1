@@ -14,14 +14,14 @@ class MergeSort {
             }
         }
     }
-    public boolean isSorted(final Comparable[] arr5) {
-        return isSorted(arr5, 0, arr5.length - 1);
+    public boolean isSorted(final Comparable[] ar) {
+        return isSorted(ar, 0, ar.length - 1);
     }
     
-    public boolean isSorted(final Comparable[] arr6,
+    public boolean isSorted(final Comparable[] ar1,
                             final int low, final int hi) {
         for (int i = low + 1; i <= hi; i++) {
-            if (less(arr6[i], arr6[i - 1])) {
+            if (less(ar1[i], ar1[i - 1])) {
                 return false;
             }
         }
