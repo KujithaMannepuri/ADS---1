@@ -5,14 +5,7 @@ class MergeSort {
     MergeSort() {
        
     }
-    
-    public void insertionSort(final Comparable[] arr, final int low, final int hi) {
-        for (int i = low; i <= hi; i++) {
-            for (int j = i; j > low && less(arr[j], arr[j - 1]); j--) {
-                exchange(arr, j, j - 1);
-            }
-        }
-    }
+
     public boolean isSorted(final Comparable[] arr) {
         return isSorted(arr, 0, arr.length - 1);
     }
@@ -60,6 +53,13 @@ class MergeSort {
         Comparable temp = orgArr[i];
         orgArr[i] = orgArr[j];
         orgArr[j] = temp;
+    }
+    public void insertionSort(final Comparable[] arr, final int low, final int hi) {
+        for (int i = low; i <= hi; i++) {
+            for (int j = i; j > low && less(arr[j], arr[j - 1]); j--) {
+                exchange(arr, j, j - 1);
+            }
+        }
     }
     public void msort( Comparable[] orgArr,  Comparable[] aux, int low,  int mid,  int hi) {
         assert isSorted(orgArr, low, mid);
