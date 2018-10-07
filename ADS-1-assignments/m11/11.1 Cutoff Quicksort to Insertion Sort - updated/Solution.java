@@ -46,7 +46,7 @@ class QuickSort {
 	public void sorting(Comparable[] arr, int lo, int hi, int cutoff) {
 		if (hi <= lo + cutoff - 1) {
 			InsertionSort(arr, lo, hi);
-			System.out.println("insertionsort called");
+			System.out.println("insertionSort called");
 			return;
 		}
 		int p = part(arr, lo, hi);
