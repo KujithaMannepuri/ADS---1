@@ -1,4 +1,4 @@
 Starting audit...
-[ERROR] F:\ADS---1\ADS-1-assignments\m11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:5:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] F:\ADS---1\ADS-1-assignments\m11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:5: Class Solution should be declared as final. [FinalClass]
 Audit done.
 Checkstyle ends with 1 errors.
