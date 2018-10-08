@@ -1,4 +1,2 @@
 Starting audit...
-[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:52:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 Audit done.
-Checkstyle ends with 1 errors.

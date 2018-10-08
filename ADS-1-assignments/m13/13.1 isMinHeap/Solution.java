@@ -51,6 +51,12 @@ class MinHeap<E extends Comparable<E>> {
  */
 public final class Solution {
     /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Empty Constructer.
+    }
+    /**
      * main function.
      *
      * @param      args  The arguments
