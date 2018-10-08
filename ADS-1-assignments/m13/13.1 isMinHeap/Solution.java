@@ -1,13 +1,31 @@
 import java.util.Scanner;
 
+/**
+ * Class for minimum heap.
+ *
+ * @param      <E>   { parameter_description }
+ */
 class MinHeap<E extends Comparable<E>> {
-    
+    /**
+     * new array.
+     */
     private E[] newArr;
-    
-    MinHeap(final E[] arr) {
+    /**
+     * Constructs the object.
+     *
+     * @param      arr   The arr
+     */
+    protected MinHeap(final E[] arr) {
         this.newArr = arr;
     }
    
+    /**
+     * Determines if minimum heap.
+     *
+     * @param      arr1  The arr 1
+     *
+     * @return     True if minimum heap, False otherwise.
+     */
     public boolean isMinHeap(final E[] arr1) {
         for (int i = 0; i < arr1.length - 1; i++) {
             if (!less(arr1[i], arr1[i + 1])) {
