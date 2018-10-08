@@ -1,0 +1,15 @@
+Starting audit...
+[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:3: Missing a Javadoc comment. [JavadocType]
+[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:4: Line has trailing spaces. [RegexpSingleline]
+[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:5:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:6: Line has trailing spaces. [RegexpSingleline]
+[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:7:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:10: Line has trailing spaces. [RegexpSingleline]
+[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:11:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:35:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:35:15: '{' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:36:1: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:44:15: 'switch' is not followed by whitespace. [WhitespaceAround]
+Audit done.
+Checkstyle ends with 12 errors.
