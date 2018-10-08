@@ -1,8 +1,4 @@
 Starting audit...
-[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:21: Line has trailing spaces. [RegexpSingleline]
-[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:53:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:53:15: '{' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:54:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:62:15: 'switch' is not followed by whitespace. [WhitespaceAround]
+[ERROR] F:\ADS---1\ADS-1-assignments\m13\13.1 isMinHeap\Solution.java:52:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 Audit done.
-Checkstyle ends with 5 errors.
+Checkstyle ends with 1 errors.

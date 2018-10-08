@@ -18,7 +18,6 @@ class MinHeap<E extends Comparable<E>> {
     protected MinHeap(final E[] arr) {
         this.newArr = arr;
     }
-   
     /**
      * Determines if minimum heap.
      *
@@ -50,30 +49,30 @@ class MinHeap<E extends Comparable<E>> {
 /**
  * Class for solution.
  */
-class Solution{
-	/**
-	 * main function.
-	 *
-	 * @param      args  The arguments
-	 */
-	public static void main(final String[] args) {
- 	Scanner sc = new Scanner(System.in);
- 	String ip = sc.nextLine();
- 	switch(ip) {
- 		case "Integer":
- 		int n1 = Integer.parseInt(sc.nextLine());
- 		for (int i = 0; i < n1; i++) {
- 			String s1 = sc.nextLine();
- 			String[] token = s1.split(",");
- 			Integer[] arr1 = new Integer[token.length];
- 			for (int j = 0; j < token.length; j++) {
- 				arr1[j] = Integer.parseInt(token[j]);
- 			}
- 		MinHeap<Integer> intgr = new MinHeap<Integer>(arr1);
- 		System.out.println(intgr.isMinHeap(arr1));
- 		}
- 		break;
- 		case "Float":
+public final class Solution {
+    /**
+     * main function.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+    Scanner sc = new Scanner(System.in);
+    String ip = sc.nextLine();
+    switch (ip) {
+        case "Integer":
+        int n1 = Integer.parseInt(sc.nextLine());
+        for (int i = 0; i < n1; i++) {
+            String s1 = sc.nextLine();
+            String[] token = s1.split(",");
+            Integer[] arr1 = new Integer[token.length];
+            for (int j = 0; j < token.length; j++) {
+                arr1[j] = Integer.parseInt(token[j]);
+            }
+        MinHeap<Integer> intgr = new MinHeap<Integer>(arr1);
+        System.out.println(intgr.isMinHeap(arr1));
+        }
+        break;
+        case "Float":
             int n2 = Integer.parseInt(sc.nextLine());
             for (int i = 0; i < n2; i++) {
                 String s2 = sc.nextLine();
@@ -114,6 +113,6 @@ class Solution{
             break;
             default:
             break;
- 	}
+    }
  }
 }
