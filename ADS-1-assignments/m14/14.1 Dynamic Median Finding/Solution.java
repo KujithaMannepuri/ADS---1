@@ -27,19 +27,19 @@ public final class Solution {
             } else {
                 maxpq.insert(val);
             }
+            if (minpq.size() - maxpq.size() > 1) {
+                maxpq.insert(minpq.delMin());
+            }
             if (maxpq.size() - minpq.size() > 1) {
                 minpq.insert(maxpq.delMax());  
-            }
-            if (maxpq.size() > minpq.size()) {
-                dMedian = maxpq.max();
-                System.out.println(dMedian);
             }
             if (minpq.size() == maxpq.size()) {
                 dMedian = (minpq.min() + maxpq.max()) / 2;
                 System.out.println(dMedian);
             }
-            if (minpq.size() - maxpq.size() > 1) {
-                maxpq.insert(minpq.delMin());
+            if (maxpq.size() > minpq.size()) {
+                dMedian = maxpq.max();
+                System.out.println(dMedian);
             }
             if (minpq.size() > maxpq.size()) {
                 dMedian = minpq.min();
