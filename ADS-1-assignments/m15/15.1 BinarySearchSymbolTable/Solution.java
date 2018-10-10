@@ -1,33 +1,69 @@
 import java.util.Scanner;
 import java.util.NoSuchElementException;
-
+/**
+ * Class for binary search st.
+ *
+ * @param      <Key>    The key
+ * @param      <Value>  The value
+ */
 class BinarySearchST<Key extends Comparable<Key>, Value> {
-    
-    private static final int INIT_CAPACITY = 2;
-    
+    /**
+     * key array.
+     */
     private Key[] keys;
-    
+    /**
+     * val array.
+     */
     private Value[] val;
-    
+    /**
+     * variable num.
+     */
     private int num = 0;
     
+    /**
+     * Constructs the object.
+     *
+     * @param      capacity  The capacity
+     */
     BinarySearchST(final int capacity) {
         keys = (Key[]) new Comparable[capacity];
         val = (Value[]) new Object[capacity];
     }
-    
+    /**
+     * { var_description }
+     */
+    private static final int INIT_CAPACITY = 2;
+    /**
+     * Constructs the object.
+     */
     BinarySearchST() {
         this(INIT_CAPACITY);
     }
-    
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int size() {
         return num;
     }
     
+    /**
+     * Determines if empty.
+     *
+     * @return     True if empty, False otherwise.
+     */
     public boolean isEmpty() {
         return size() == 0;
     }
     
+    /**
+     * { function_description }
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
     public boolean contains(final Key key) {
         if (key == null) {
             throw new IllegalArgumentException(
@@ -36,6 +72,13 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         return get(key) != null;
     }
     
+    /**
+     * { function_description }
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Value get(final Key key) {
         if (key == null) {
             throw new IllegalArgumentException("argument to get() is null");
@@ -49,7 +92,13 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         return null;
     }
-    
+    /**
+     * { function_description }
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int rank(final Key key) {
         if (key == null) {
             throw new IllegalArgumentException("argument to rank() is null");
@@ -69,6 +118,12 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         return lo;
     }
     
+    /**
+     * { function_description }
+     *
+     * @param      key   The key
+     * @param      val1  The value 1
+     */
     public void put(final Key key, final Value val1)  {
         if (key == null) {
             throw new IllegalArgumentException(
@@ -102,6 +157,11 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         assert check();
     }
     
+    /**
+     * { function_description }
+     *
+     * @param      key   The key
+     */
     public void delete(final Key key) {
         if (key == null) {
             throw new IllegalArgumentException("argument to delete() is null");
@@ -127,6 +187,9 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         assert check();
     }
     
+    /**
+     * { function_description }
+     */
     public void deleteMin() {
         if (isEmpty()) {
             throw new NoSuchElementException("Symbol table underflow error");
@@ -142,6 +205,11 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         delete(max());
     }
   
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Key min() {
         if (isEmpty()) {
             throw new NoSuchElementException(
@@ -149,8 +217,11 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         return keys[0];
     }
-
-   
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Key max() {
         if (isEmpty()) {
             throw new NoSuchElementException(
@@ -158,8 +229,13 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         return keys[num - 1];
     }
-
-   
+    /**
+     * { function_description }
+     *
+     * @param      k     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Key select(final int k) {
         if (k < 0 || k >= size()) {
             throw new IllegalArgumentException(
@@ -167,7 +243,13 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         return keys[k];
     }
-    
+    /**
+     * { function_description }
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Key floor(final Key key) {
         if (key == null) {
             throw new IllegalArgumentException("argument to floor() is null");
@@ -182,7 +264,13 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
             return keys[i - 1];
         }
     }
-    
+    /**
+     * { function_description }
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Key ceiling(final Key key) {
         if (key == null) {
             throw new IllegalArgumentException("argument to ceiling() is null");
@@ -195,7 +283,14 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
     }
 
-    
+    /**
+     * { function_description }
+     *
+     * @param      lo    The lower
+     * @param      hi    The higher
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int size(final Key lo, final Key hi) {
         if (lo == null) {
             throw new IllegalArgumentException(
@@ -215,6 +310,12 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
             return rank(hi) - rank(lo);
         }
     }
+
+     /**
+      * { function_description }
+      *
+      * @param      capacity  The capacity
+      */
      private void resize(final int capacity) {
         assert capacity >= num;
         Key[]   keyTemp = (Key[])   new Comparable[capacity];
@@ -226,6 +327,11 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         val = valTemp;
         keys = keyTemp;
     }
+    /**
+     * Determines if sorted.
+     *
+     * @return     True if sorted, False otherwise.
+     */
     private boolean isSorted() {
         for (int i = 1; i < size(); i++) {
             if (keys[i].compareTo(keys[i - 1]) < 0) {
@@ -234,9 +340,20 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         return true;
     }
+
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     private boolean check() {
         return isSorted() && rankCheck();
     }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     private boolean rankCheck() {
         for (int i = 0; i < size(); i++) {
             if (i != rank(select(i))) {
@@ -251,6 +368,11 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         return true;
     }
     
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         String s = "";
         int i = 0;
