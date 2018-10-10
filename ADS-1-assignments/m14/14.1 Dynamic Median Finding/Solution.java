@@ -2,11 +2,11 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
 /**
  * constructor.
  */
-    private Solution () {
+    private Solution() {
 
     }
     /**
@@ -27,32 +27,24 @@ public class Solution {
             } else {
                 maxpq.insert(val);
             }
-
-            if (minpq.size() - maxpq.size() > 1) {
-                maxpq.insert(minpq.delMin());
-
-            }
             if (maxpq.size() - minpq.size() > 1) {
-                minpq.insert(maxpq.delMax());
-                
+                minpq.insert(maxpq.delMax());  
             }
-
-            if (minpq.size() == maxpq.size()) {
-                dMedian = (minpq.min() + maxpq.max()) / 2;
-                System.out.println(dMedian);
-            }
-
             if (maxpq.size() > minpq.size()) {
                 dMedian = maxpq.max();
                 System.out.println(dMedian);
             }
-
+            if (minpq.size() == maxpq.size()) {
+                dMedian = (minpq.min() + maxpq.max()) / 2;
+                System.out.println(dMedian);
+            }
+            if (minpq.size() - maxpq.size() > 1) {
+                maxpq.insert(minpq.delMin());
+            }
             if (minpq.size() > maxpq.size()) {
                 dMedian = minpq.min();
                 System.out.println(dMedian);
             }
-
         }
-
     }
 }

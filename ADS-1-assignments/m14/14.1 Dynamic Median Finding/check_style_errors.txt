@@ -1,6 +1,4 @@
 Starting audit...
-[ERROR] F:\ADS---1\ADS-1-assignments\m14\14.1 Dynamic Median Finding\Solution.java:5: Class Solution should be declared as final. [FinalClass]
-[ERROR] F:\ADS---1\ADS-1-assignments\m14\14.1 Dynamic Median Finding\Solution.java:9:22: '(' is preceded with whitespace. [MethodParamPad]
-[ERROR] F:\ADS---1\ADS-1-assignments\m14\14.1 Dynamic Median Finding\Solution.java:37: Line has trailing spaces. [RegexpSingleline]
+[ERROR] F:\ADS---1\ADS-1-assignments\m14\14.1 Dynamic Median Finding\Solution.java:31: Line has trailing spaces. [RegexpSingleline]
 Audit done.
-Checkstyle ends with 3 errors.
+Checkstyle ends with 1 errors.
