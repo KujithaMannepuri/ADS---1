@@ -29,7 +29,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         val = (Value[]) new Object[capacity];
     }
     /**
-     * { var_description }
+     * { var_description }.
      */
     private static final int INIT_CAPACITY = 2;
     /**
@@ -39,13 +39,13 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         this(INIT_CAPACITY);
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
     public int size() {
         return num;
-    } 
+    }
     /**
      * Determines if empty.
      *
@@ -55,7 +55,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         return size() == 0;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      key   The key
      *
@@ -69,7 +69,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         return get(key) != null;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      key   The key
      *
@@ -89,7 +89,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         return null;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      key   The key
      *
@@ -114,7 +114,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         return lo;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      key   The key
      * @param      val1  The value 1
@@ -128,7 +128,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
             delete(key);
             return;
         }
-        int i = rank(key); 
+        int i = rank(key);
         if (i < num && keys[i].compareTo(key) == 0) {
             val[i] = val1;
             return;
@@ -148,7 +148,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         assert check();
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      key   The key
      */
@@ -177,7 +177,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         assert check();
     }
     /**
-     * { function_description }
+     * { function_description }.
      */
     public void deleteMin() {
         if (isEmpty()) {
@@ -185,6 +185,9 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         delete(min());
     }
+    /**
+     * { function_description }.
+     */
     public void deleteMax() {
         if (isEmpty()) {
             throw new NoSuchElementException(
@@ -193,7 +196,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         delete(max());
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -205,7 +208,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         return keys[0];
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -217,7 +220,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         return keys[num - 1];
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      k     { parameter_description }
      *
@@ -231,7 +234,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         return keys[k];
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      key   The key
      *
@@ -252,7 +255,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      key   The key
      *
@@ -270,7 +273,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      lo    The lower
      * @param      hi    The higher
@@ -297,7 +300,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
     }
      /**
-      * { function_description }
+      * { function_description }.
       *
       * @param      capacity  The capacity
       */
@@ -326,7 +329,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         return true;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */

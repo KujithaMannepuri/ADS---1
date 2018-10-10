@@ -1,22 +1,2 @@
 Starting audit...
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:31: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:41: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:48: Line has trailing spaces. [RegexpSingleline]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:57: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:71: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:91: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:116: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:131: Line has trailing spaces. [RegexpSingleline]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:150: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:179: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:188:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:195: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:207: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:219: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:233: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:254: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:272: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:299: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\ADS---1\ADS-1-assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:328: First sentence should end with a period. [JavadocStyle]
 Audit done.
-Checkstyle ends with 19 errors.
