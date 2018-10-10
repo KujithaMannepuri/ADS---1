@@ -19,7 +19,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      * variable num.
      */
     private int num = 0;
-    
     /**
      * Constructs the object.
      *
@@ -46,8 +45,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      */
     public int size() {
         return num;
-    }
-    
+    } 
     /**
      * Determines if empty.
      *
@@ -56,7 +54,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
     public boolean isEmpty() {
         return size() == 0;
     }
-    
     /**
      * { function_description }
      *
@@ -71,7 +68,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         return get(key) != null;
     }
-    
     /**
      * { function_description }
      *
@@ -117,7 +113,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         return lo;
     }
-    
     /**
      * { function_description }
      *
@@ -133,15 +128,11 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
             delete(key);
             return;
         }
-        int i = rank(key);
-
-        
+        int i = rank(key); 
         if (i < num && keys[i].compareTo(key) == 0) {
             val[i] = val1;
             return;
         }
-
-       
         if (num == keys.length) {
             resize(2 * keys.length);
         }
@@ -156,7 +147,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
 
         assert check();
     }
-    
     /**
      * { function_description }
      *
@@ -186,7 +176,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         assert check();
     }
-    
     /**
      * { function_description }
      */
@@ -196,7 +185,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         delete(min());
     }
-    
     public void deleteMax() {
         if (isEmpty()) {
             throw new NoSuchElementException(
@@ -204,7 +192,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         delete(max());
     }
-  
     /**
      * { function_description }
      *
@@ -282,7 +269,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
             return keys[i];
         }
     }
-
     /**
      * { function_description }
      *
@@ -310,7 +296,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
             return rank(hi) - rank(lo);
         }
     }
-
      /**
       * { function_description }
       *
@@ -340,7 +325,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         return true;
     }
-
     /**
      * { function_description }
      *
@@ -367,7 +351,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         return true;
     }
-    
     /**
      * Returns a string representation of the object.
      *
