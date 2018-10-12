@@ -148,18 +148,20 @@ public final class Solution {
 	}
 	public static void main(final String[] args) {
 		Scanner sc = new Scanner(System.in);
+		final int three = 3;
+		final int four = 4;
 		BinarySearchTree bst = new BinarySearchTree();
 		while (sc.hasNext()) {
 			String[] token = sc.nextLine().split(",");
 			switch(token[0]) {
 				case "get":
-				Book ip1 = new Book(token[1], token[2], Float.parseFloat(token[3]));
+				Book ip1 = new Book(token[1], token[2], Float.parseFloat(token[three]));
 				Integer i = bst.get(ip1);
 				System.out.println(i);
 				break;
 				case "put":
-				Book ip2 = new Book(token[1], token[2], Float.parseFloat(token[3]));
-				bst.put(ip2, Integer.parseInt(token[4]));
+				Book ip2 = new Book(token[1], token[2], Float.parseFloat(token[three]));
+				bst.put(ip2, Integer.parseInt(token[four]));
 				break;
 				default:
 				break;
