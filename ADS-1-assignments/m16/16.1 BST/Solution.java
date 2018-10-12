@@ -54,7 +54,7 @@ class Book {
 		return this.author;
 	}
 	/**
-	 * { function_description }
+	 * getprice function.
 	 *
 	 * @return     { description_of_the_return_value }
 	 */
@@ -70,8 +70,8 @@ class Book {
  */
 class BinarySearchTree<Key extends Comparable<Key>, Value> {
 	Node root;
-	Book book;
-	int value;
+	private Book book;
+	private int value;
 	/**
 	 * Constructs the object.
 	 */
@@ -97,7 +97,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 	        }
 	        if (cmp == 0) {
 	        	return x.val;
-	        } 	
+	        }
 		}
 		return null;
 	}
@@ -126,11 +126,9 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 		int cmp = key.getname().compareTo(x.data.getname());
 		if (cmp < 0) {
 			x.left = put(x.left, key, val);
-		}
-		else if (cmp > 0) {
+		} else if (cmp > 0) {
 			x.right = put(x.right, key, val);
-		}
-		else if (cmp == 0) {
+		} else if (cmp == 0) {
 			x.val = val;
 		}
 		return x;
@@ -146,6 +144,11 @@ public final class Solution {
 	private Solution() {
 
 	}
+	/**
+	 * main function.
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(final String[] args) {
 		Scanner sc = new Scanner(System.in);
 		final int three = 3;
@@ -153,14 +156,16 @@ public final class Solution {
 		BinarySearchTree bst = new BinarySearchTree();
 		while (sc.hasNext()) {
 			String[] token = sc.nextLine().split(",");
-			switch(token[0]) {
+			switch (token[0]) {
 				case "get":
-				Book ip1 = new Book(token[1], token[2], Float.parseFloat(token[three]));
+				Book ip1 = new Book(token[1], token[2],
+				Float.parseFloat(token[three]));
 				Integer i = bst.get(ip1);
 				System.out.println(i);
 				break;
 				case "put":
-				Book ip2 = new Book(token[1], token[2], Float.parseFloat(token[three]));
+				Book ip2 = new Book(token[1], token[2],
+				Float.parseFloat(token[three]));
 				bst.put(ip2, Integer.parseInt(token[four]));
 				break;
 				default:
