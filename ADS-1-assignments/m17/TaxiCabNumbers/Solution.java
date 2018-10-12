@@ -17,7 +17,7 @@ final class Solution {
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         final int thousand = 1000;
-        while(sc.hasNextLine()) {
+        while (sc.hasNextLine()) {
             String[] token = sc.nextLine().split(" ");
             int ip1 = Integer.parseInt(token[0]);
             int ip2 = Integer.parseInt(token[1]);
