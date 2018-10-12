@@ -1,47 +1,91 @@
 import java.util.Scanner;
-
+/**
+ * Class for node.
+ */
 class Node {
 	Book data;
 	int val;
 	Node left;
 	Node right;
-	Node(Book b, int v) {
+	Node(final Book b, final int v) {
 		this.data = b;
 		this.val = v;
 	}
 }
-
+/**
+ * Class for book.
+ */
 class Book {
 	String author;
 	String name;
 	Float price;
+	/**
+	 * Constructs the object.
+	 */
 	Book() {
 
 	}
-	Book (String n, String a, Float p) {
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      n     { parameter_description }
+	 * @param      a     { parameter_description }
+	 * @param      p     { parameter_description }
+	 */
+	Book (final String n, final String a, final Float p) {
 		this.name = n;
 		this.author = a;
 		this.price = p;
 	}
+	/**
+	 * { function_description }.
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	String getname() {
 		return this.name;
 	}
+	/**
+	 * { function_description }.
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	String getauthor() {
 		return this.author;
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	Float getprice() {
 		return this.price;
 	}
 }
-
+/**
+ * Class for binary search tree.
+ *
+ * @param      <Key>    The key
+ * @param      <Value>  The value
+ */
 class BinarySearchTree<Key extends Comparable<Key>, Value> {
 	Node root;
 	Book book;
 	int value;
+	/**
+	 * Constructs the object.
+	 */
 	BinarySearchTree() {
 
 	}
-	Integer get(Book key) {
+	/**
+	 * { function_description }.
+	 *
+	 * @param      key   The key
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
+	Integer get(final Book key) {
 		Node x = root;
 		while (x != null) {
 			int cmp = key.getname().compareTo(x.data.getname());
@@ -57,10 +101,25 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 		}
 		return null;
 	}
-	void put(Book key, int val) {
+	/**
+	 * { function_description }.
+	 *
+	 * @param      key   The key
+	 * @param      val   The value
+	 */
+	public void put(final Book key, final int val) {
 		root = put(root, key, val);
 	}
-	Node put(Node x, Book key, int val) {
+	/**
+	 * { function_description }.
+	 *
+	 * @param      x     { parameter_description }
+	 * @param      key   The key
+	 * @param      val   The value
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
+	public Node put(final Node x, final Book key, final int val) {
 		if (x == null) {
 			return new Node(key, val);
 		}
@@ -77,9 +136,17 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 		return x;
 	}
 }
+/**
+ * Class for solution.
+ */
+public final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	private Solution() {
 
-class Solution {
-	public static void main(String[] args) {
+	}
+	public static void main(final String[] args) {
 		Scanner sc = new Scanner(System.in);
 		BinarySearchTree bst = new BinarySearchTree();
 		while (sc.hasNext()) {
