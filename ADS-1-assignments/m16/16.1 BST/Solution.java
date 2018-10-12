@@ -5,8 +5,8 @@ class Node {
 	int val;
 	Node left;
 	Node right;
-	Node(Book k, int v) {
-		this.data = k;
+	Node(Book b, int v) {
+		this.data = b;
 		this.val = v;
 	}
 }
@@ -41,6 +41,22 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 	BinarySearchTree() {
 
 	}
+	Integer get(Book key) {
+		Node x = root;
+		while (x != null) {
+			int cmp = key.getname().compareTo(x.data.getname());
+			if (cmp < 0) {
+				x = x.left;
+			}
+	        if (cmp > 0) {
+	        	x = x.right;
+	        }
+	        if (cmp == 0) {
+	        	return x.val;
+	        } 	
+		}
+		return null;
+	}
 	void put(Book key, int val) {
 		root = put(root, key, val);
 	}
@@ -59,22 +75,6 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 			x.val = val;
 		}
 		return x;
-	}
-	Integer get(Book key) {
-		Node x = root;
-		while (x != null) {
-			int cmp = key.getname().compareTo(x.data.getname());
-			if (cmp < 0) {
-				x = x.left;
-			}
-	        if (cmp > 0) {
-	        	x = x.right;
-	        }
-	        if (cmp == 0) {
-	        	return x.val;
-	        } 	
-		}
-		return null;
 	}
 }
 
