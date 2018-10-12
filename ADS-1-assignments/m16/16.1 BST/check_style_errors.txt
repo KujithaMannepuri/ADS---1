@@ -1,24 +1,4 @@
 Starting audit...
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:6:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:6:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:6:14: Variable 'data' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:7:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:7:13: Variable 'val' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:8:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:8:14: Variable 'left' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:9:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:9:14: Variable 'right' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:10:9: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:19:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:19:16: Variable 'author' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:20:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:20:16: Variable 'name' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:21:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:21:15: Variable 'price' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:35:14: '(' is preceded with whitespace. [MethodParamPad]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:72:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:72:14: Variable 'root' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:73:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:74:9: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:7:1: File contains tab characters (this is the first instance). [FileTabCharacter]
 Audit done.
-Checkstyle ends with 21 errors.
+Checkstyle ends with 1 errors.

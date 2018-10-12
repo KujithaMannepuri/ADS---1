@@ -1,24 +1,21 @@
 import java.util.Scanner;
-/**
- * Class for node.
- */
-class Node {
-	Book data;
-	int val;
-	Node left;
-	Node right;
-	Node(final Book b, final int v) {
-		this.data = b;
-		this.val = v;
-	}
-}
+
 /**
  * Class for book.
  */
 class Book {
-	String author;
-	String name;
-	Float price;
+	/**
+	 * { var_description }.
+	 */
+	private String author;
+	/**
+	 * { var_description }.
+	 */
+	private String name;
+	/**
+	 * { var_description }.
+	 */
+	private Float price;
 	/**
 	 * Constructs the object.
 	 */
@@ -32,7 +29,7 @@ class Book {
 	 * @param      a     { parameter_description }
 	 * @param      p     { parameter_description }
 	 */
-	Book (final String n, final String a, final Float p) {
+	Book(final String n, final String a, final Float p) {
 		this.name = n;
 		this.author = a;
 		this.price = p;
@@ -69,8 +66,17 @@ class Book {
  * @param      <Value>  The value
  */
 class BinarySearchTree<Key extends Comparable<Key>, Value> {
-	Node root;
+	/**
+	 * variable root.
+	 */
+	private Node root;
+	/**
+	 * variable book.
+	 */
 	private Book book;
+	/**
+	 * variable value.
+	 */
 	private int value;
 	/**
 	 * Constructs the object.
