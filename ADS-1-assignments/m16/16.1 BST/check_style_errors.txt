@@ -1,4 +1,2 @@
 Starting audit...
-[ERROR] F:\ADS---1\ADS-1-assignments\m16\16.1 BST\Solution.java:7:1: File contains tab characters (this is the first instance). [FileTabCharacter]
 Audit done.
-Checkstyle ends with 1 errors.
