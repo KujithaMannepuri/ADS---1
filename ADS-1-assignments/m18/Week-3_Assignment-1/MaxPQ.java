@@ -6,7 +6,7 @@ import java.util.Iterator;
  *
  * @param      <Key>  The key
  */
-public class MaxST<Key> implements Iterable<Key> {
+public class MaxPQ<Key> implements Iterable<Key> {
     /**
      * key array.
      */
@@ -26,7 +26,7 @@ public class MaxST<Key> implements Iterable<Key> {
      * @param  initCapacity the initial capacity of this priority queue.
      * Time complexity is 1.
      */
-    public MaxST(int initCapacity) {
+    public MaxPQ(int initCapacity) {
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
@@ -35,7 +35,7 @@ public class MaxST<Key> implements Iterable<Key> {
      * Initializes an empty priority queue.
      * Time complexity is 1.
      */
-    public MaxST() {
+    public MaxPQ() {
         this(1);
     }
     /**
@@ -45,7 +45,7 @@ public class MaxST<Key> implements Iterable<Key> {
      * @param      initCapacity  The initialize capacity
      * @param      comparator    The comparator
      */
-    public MaxST(int initCapacity, Comparator<Key> comparator) {
+    public MaxPQ(int initCapacity, Comparator<Key> comparator) {
         this.comparator = comparator;
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
@@ -56,7 +56,7 @@ public class MaxST<Key> implements Iterable<Key> {
      *
      * @param  comparator the order in which to compare the keys
      */
-    public MaxST(Comparator<Key> comparator) {
+    public MaxPQ(Comparator<Key> comparator) {
         this(1, comparator);
     }
 
@@ -67,7 +67,7 @@ public class MaxST<Key> implements Iterable<Key> {
      *
      * @param  keys the array of keys
      */
-    public MaxST(Key[] keys) {
+    public MaxPQ(Key[] keys) {
         n = keys.length;
         pq = (Key[]) new Object[keys.length + 1];
         for (int i = 0; i < n; i++)
@@ -251,15 +251,15 @@ public class MaxST<Key> implements Iterable<Key> {
         /**
          * variable copy.
          */
-        private MaxST<Key> copy;
+        private MaxPQ<Key> copy;
         /**
          * Constructs the object.
          */
         public HeapIterator() {
             if (comparator == null) {
-                copy = new MaxST<Key>(size());
+                copy = new MaxPQ<Key>(size());
             } else {
-                copy = new MaxST<Key>(size(), comparator);
+                copy = new MaxPQ<Key>(size(), comparator);
             }
             for (int i = 1; i <= n; i++) {
                 copy.insert(pq[i]);

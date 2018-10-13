@@ -6,7 +6,7 @@ import java.util.Iterator;
  *
  * @param  <Key>  The key
  */
-public class MinST<Key> implements Iterable<Key> {
+public class MinPQ<Key> implements Iterable<Key> {
     /**
      * variable pq.
      */
@@ -22,7 +22,7 @@ public class MinST<Key> implements Iterable<Key> {
     /**
      * constructor.
      */
-    public MinST() {
+    public MinPQ() {
         this(1);
     }
     /**
@@ -31,7 +31,7 @@ public class MinST<Key> implements Iterable<Key> {
      *
      * @param      initCapacity  The initialize capacity
      */
-    public MinST(int initCapacity) {
+    public MinPQ(int initCapacity) {
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
@@ -42,7 +42,7 @@ public class MinST<Key> implements Iterable<Key> {
      * @param      initCapacity  The initialize capacity
      * @param      comparator    The comparator
      */
-    public MinST(int initCapacity, Comparator<Key> comparator) {
+    public MinPQ(int initCapacity, Comparator<Key> comparator) {
         this.comparator = comparator;
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
@@ -53,7 +53,7 @@ public class MinST<Key> implements Iterable<Key> {
      * 
      * @param      comparator  The comparator
      */
-    public MinST(Comparator<Key> comparator) {
+    public MinPQ(Comparator<Key> comparator) {
         this(1, comparator);
     }
     /**
@@ -84,7 +84,7 @@ public class MinST<Key> implements Iterable<Key> {
      *
      * @param      keys  The keys
      */
-    public MinST(Key[] keys) {
+    public MinPQ(Key[] keys) {
         n = keys.length;
         pq = (Key[]) new Object[keys.length + 1];
         for (int i = 0; i < n; i++) {
@@ -235,12 +235,12 @@ public class MinST<Key> implements Iterable<Key> {
      * Time complexity is 1.
      */
     private class HeapIterator implements Iterator<Key> {
-        private MinST<Key> copy;
+        private MinPQ<Key> copy;
         public HeapIterator() {
             if (comparator == null) {
-                copy = new MinST<Key>(size());
+                copy = new MinPQ<Key>(size());
             } else {
-                copy = new MinST<Key>(size(), comparator);
+                copy = new MinPQ<Key>(size(), comparator);
             }                   
             for (int i = 1; i <= n; i++) {
                 copy.insert(pq[i]);

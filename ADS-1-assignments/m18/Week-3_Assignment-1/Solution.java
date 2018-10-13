@@ -1,13 +1,25 @@
 import java.util.Scanner;
-import java.util.Arrays;
+//import java.util.Arrays;
+/**
+ * Class for stock.
+ */
 class Stock {
+	/**
+	 * { var_description }.
+	 */
 	String name;
-
-	Stock(String n, Float p) {
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      n     { parameter_description }
+	 */
+	Stock(String n) {
 		this.name = n;
 	}
 }
-
+/**
+ * Class for node.
+ */
 class Node {
 	Stock sName;
 	Float fCount;
@@ -19,15 +31,32 @@ class Node {
 		this.fCount = count;
 	}
 }
+/**
+ * Class for binary search st.
+ */
 class BinarySearchST {
 
 
 }
-class Solution {
+/**
+ * Class for solution.
+ */
+public final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	private Solution() {
+
+	}
+	/**
+	 * main function.
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		MinST min = new MinST();
-		MaxST max = new MaxST();
+		MinPQ min = new MinPQ();
+		MaxPQ max = new MaxPQ();
 		BinarySearchST bst = new BinarySearchST();
 		int n1 = sc.nextInt();
 		sc.nextLine();
