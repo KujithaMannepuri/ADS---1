@@ -27,9 +27,9 @@ class Book implements Comparable {
         return this.price;
     }
     
-    public int compareTo(final Object obj) {
-        Book bookName = (Book) obj;
-        return this.name.compareTo(bookName.name);
+    public int compareTo(final Object object) {
+        Book that = (Book) object;
+        return this.name.compareTo(that.name);
     }
     public String toString() {
         return getName() + ", " + getAuthor() + ", " + getPrice();
