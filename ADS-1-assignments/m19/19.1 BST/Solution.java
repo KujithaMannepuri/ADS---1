@@ -140,7 +140,7 @@ class BinarySearchTree {
      *
      * @return     { description_of_the_return_value }
      */
-    private int size(Node x) {
+    private int size(final Node x) {
         if (x == null) {
             return 0;
         } else {
