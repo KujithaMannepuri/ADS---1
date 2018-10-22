@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 /**
  * Class for book.
  */
@@ -16,7 +15,6 @@ class Book implements Comparable {
      * variable price.
      */
     private float price;
-    
     /**
      * Constructs the object.
      *
@@ -55,7 +53,7 @@ class Book implements Comparable {
         return this.price;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      object  The object
      *
@@ -95,11 +93,11 @@ class BinarySearchTree {
          */
         private int size;
         /**
-         * { var_description }
+         * { var_description }.
          */
         private Node left;
         /**
-         * { var_description }
+         * { var_description }.
          */
         private Node right;
         /**
@@ -136,7 +134,7 @@ class BinarySearchTree {
         return size(root);
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      x     { parameter_description }
      *
@@ -150,7 +148,7 @@ class BinarySearchTree {
         }
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      key   The key
      *
@@ -170,19 +168,17 @@ class BinarySearchTree {
         }
         return -1;
     }
-    
     /**
-     * { function_description }
-     *
+     * { function_description }.
+     *.
      * @param      key   The key
      * @param      val   The value
      */
     public void put(final Book key, final int val) {
         root = put(root, key, val);
     }
-   
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      x     { parameter_description }
      * @param      key   The key
@@ -205,7 +201,7 @@ class BinarySearchTree {
         return x;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -213,7 +209,7 @@ class BinarySearchTree {
         return max(root).key;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      x     { parameter_description }
      *
@@ -289,7 +285,6 @@ class BinarySearchTree {
         }
         return ceil(x.right, key);
     }
-    
     /**
      * { function_description }.
      *
@@ -305,7 +300,6 @@ class BinarySearchTree {
             return x.key;
         }
     }
-    
     /**
      * { function_description }.
      *
@@ -364,7 +358,6 @@ class BinarySearchTree {
             return x;
         }
     }
-    
     // public int rank(Book key) {
     //     return rank(key, root);
     // }
