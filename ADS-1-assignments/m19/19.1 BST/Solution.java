@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class BookDetails implements Comparable {
+class Book implements Comparable {
     
     private String name;
     
@@ -8,7 +8,7 @@ class BookDetails implements Comparable {
     
     private float price;
     
-    BookDetails(final String book,
+    Book(final String book,
                 final String bAuthor, final float bPrice) {
         this.name = book;
         this.author = bAuthor;
@@ -27,9 +27,9 @@ class BookDetails implements Comparable {
         return this.price;
     }
     
-    public int compareTo(final Object object) {
-        BookDetails that = (BookDetails) object;
-        return this.name.compareTo(that.name);
+    public int compareTo(final Object obj) {
+        Book bookName = (Book) obj;
+        return this.name.compareTo(bookName.name);
     }
     public String toString() {
         return getName() + ", " + getAuthor() + ", " + getPrice();
@@ -42,7 +42,7 @@ class BinarySearchTree {
     
     private final class Node {
         
-        private BookDetails key;
+        private Book key;
         
         private int val;
         
@@ -52,7 +52,7 @@ class BinarySearchTree {
         
         private int size;
         
-        private Node(final BookDetails key1, final int val1, final int s) {
+        private Node(final Book key1, final int val1, final int s) {
             this.key = key1;
             this.val = val1;
             this.size = s;
@@ -76,7 +76,7 @@ class BinarySearchTree {
         }
     }
     
-    public int get(final BookDetails key) {
+    public int get(final Book key) {
         Node x = root;
         while (x != null) {
             int cmp = key.compareTo(x.key);
@@ -91,11 +91,11 @@ class BinarySearchTree {
         return -1;
     }
     
-    public void put(final BookDetails key, final int val) {
+    public void put(final Book key, final int val) {
         root = put(root, key, val);
     }
    
-    private Node put(final Node x, final BookDetails key, final int val) {
+    private Node put(final Node x, final Book key, final int val) {
         if (x == null) {
             return new Node(key, val, 1);
         }
@@ -110,7 +110,7 @@ class BinarySearchTree {
         return x;
     }
     
-    public BookDetails min() {
+    public Book min() {
         return min(root).key;
     }
     
@@ -122,7 +122,7 @@ class BinarySearchTree {
         }
     }
    
-    public BookDetails max() {
+    public Book max() {
         return max(root).key;
     }
     
@@ -134,7 +134,7 @@ class BinarySearchTree {
         }
     }
     
-    public BookDetails floor(BookDetails key) {
+    public Book floor(Book key) {
         Node x = floor(root, key);
         if (x == null) {
             return null;
@@ -143,7 +143,7 @@ class BinarySearchTree {
         }
     }
     
-    private Node floor(Node x, BookDetails key) {
+    private Node floor(Node x, Book key) {
         if (x == null) {
             return null;
         }
@@ -162,8 +162,8 @@ class BinarySearchTree {
         }
     }
     
-    public BookDetails ceiling(BookDetails key) {
-        Node x = ceiling(root, key);
+    public Book ceil(Book key) {
+        Node x = ceil(root, key);
         if (x == null) {
             return null;
         } else {
@@ -171,7 +171,7 @@ class BinarySearchTree {
         }
     }
     
-    private Node ceiling(Node x, BookDetails key) {
+    private Node ceil(Node x, Book key) {
         if (x == null) {
             return null;
         }
@@ -180,17 +180,17 @@ class BinarySearchTree {
             return x;
         }
         if (cmp < 0) {
-            Node t = ceiling(x.left, key);
+            Node t = ceil(x.left, key);
             if (t != null) {
                 return t;
             } else {
                 return x;
             }
         }
-        return ceiling(x.right, key);
+        return ceil(x.right, key);
     }
     
-    public BookDetails select(int k) {
+    public Book select(int k) {
         Node x = select(root, k);
         return x.key;
     }
@@ -209,23 +209,23 @@ class BinarySearchTree {
         }
     }
     
-    public int rank(BookDetails key) {
-        return rank(key, root);
-    }
+    // public int rank(Book key) {
+    //     return rank(key, root);
+    // }
     
-    private int rank(BookDetails key, Node x) {
-        if (x == null) {
-            return 0;
-        }
-        int cmp = key.compareTo(x.key);
-        if (cmp < 0) {
-            return rank(key, x.left);
-        } else if (cmp > 0) {
-            return 1 + size(x.left) + rank(key, x.right);
-        } else {
-            return size(x.left);
-        }
-    }
+    // private int rank(Book key, Node x) {
+    //     if (x == null) {
+    //         return 0;
+    //     }
+    //     int cmp = key.compareTo(x.key);
+    //     if (cmp < 0) {
+    //         return rank(key, x.left);
+    //     } else if (cmp > 0) {
+    //         return 1 + size(x.left) + rank(key, x.right);
+    //     } else {
+    //         return size(x.left);
+    //     }
+    // }
 }
 
 public final class Solution {
@@ -241,12 +241,12 @@ public final class Solution {
             String[] tokens = sc.nextLine().split(",");
             switch (tokens[0]) {
             case "put":
-                BookDetails deobj = new BookDetails(tokens[1],
+                Book deobj = new Book(tokens[1],
                                                     tokens[2], Float.parseFloat(tokens[2 + 1]));
                 bstobj.put(deobj, Integer.parseInt(tokens[2 + 2]));
                 break;
             case "get":
-                deobj = new BookDetails(tokens[1], tokens[2],
+                deobj = new Book(tokens[1], tokens[2],
                                         Float.parseFloat(tokens[2 + 1]));
                 if (bstobj.get(deobj) == -1) {
                     System.out.println("null");
@@ -264,14 +264,14 @@ public final class Solution {
                 System.out.println(bstobj.select(Integer.parseInt(tokens[1])));
                 break;
             case "floor":
-                deobj = new BookDetails(tokens[1],
+                deobj = new Book(tokens[1],
                                         tokens[2], Float.parseFloat(tokens[2 + 1]));
                 System.out.println(bstobj.floor(deobj));
                 break;
-            case "ceiling":
-                deobj = new BookDetails(tokens[1],
+            case "ceil":
+                deobj = new Book(tokens[1],
                                         tokens[2], Float.parseFloat(tokens[2 + 1]));
-                System.out.println(bstobj.ceiling(deobj));
+                System.out.println(bstobj.ceil(deobj));
                 break;
             default:
                 break;
