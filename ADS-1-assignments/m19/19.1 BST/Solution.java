@@ -162,8 +162,8 @@ class BinarySearchTree {
         }
     }
     
-    public BookDetails ceil(BookDetails key) {
-        Node x = ceil(root, key);
+    public BookDetails ceiling(BookDetails key) {
+        Node x = ceiling(root, key);
         if (x == null) {
             return null;
         } else {
@@ -171,7 +171,7 @@ class BinarySearchTree {
         }
     }
     
-    private Node ceil(Node x, BookDetails key) {
+    private Node ceiling(Node x, BookDetails key) {
         if (x == null) {
             return null;
         }
@@ -180,14 +180,14 @@ class BinarySearchTree {
             return x;
         }
         if (cmp < 0) {
-            Node t = ceil(x.left, key);
+            Node t = ceiling(x.left, key);
             if (t != null) {
                 return t;
             } else {
                 return x;
             }
         }
-        return ceil(x.right, key);
+        return ceiling(x.right, key);
     }
     
     public BookDetails select(int k) {
@@ -268,10 +268,10 @@ public final class Solution {
                                         tokens[2], Float.parseFloat(tokens[2 + 1]));
                 System.out.println(bstobj.floor(deobj));
                 break;
-            case "ceil":
+            case "ceiling":
                 deobj = new BookDetails(tokens[1],
                                         tokens[2], Float.parseFloat(tokens[2 + 1]));
-                System.out.println(bstobj.ceil(deobj));
+                System.out.println(bstobj.ceiling(deobj));
                 break;
             default:
                 break;
