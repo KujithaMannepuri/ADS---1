@@ -1,55 +1,114 @@
 import java.util.Scanner;
 
+/**
+ * Class for book.
+ */
 class Book implements Comparable {
-    
+    /**
+     * variable name.
+     */
     private String name;
-    
+    /**
+     * variable author.
+     */
     private String author;
-    
+    /**
+     * variable price.
+     */
     private float price;
     
+    /**
+     * Constructs the object.
+     *
+     * @param      book     The book
+     * @param      bAuthor  The author
+     * @param      bPrice   The price
+     */
     Book(final String book,
                 final String bAuthor, final float bPrice) {
         this.name = book;
         this.author = bAuthor;
         this.price = bPrice;
     }
-    
+    /**
+     * Gets the name.
+     *
+     * @return     The name.
+     */
     public String getName() {
         return this.name;
     }
-    
+    /**
+     * Gets the author.
+     *
+     * @return     The author.
+     */
     public String getAuthor() {
         return this.author;
     }
-    
+    /**
+     * Gets the price.
+     *
+     * @return     The price.
+     */
     public float getPrice() {
         return this.price;
     }
-    
+    /**
+     * { function_description }
+     *
+     * @param      object  The object
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int compareTo(final Object object) {
         Book that = (Book) object;
         return this.name.compareTo(that.name);
     }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return getName() + ", " + getAuthor() + ", " + getPrice();
     }
 }
-
+/**
+ * Class for binary search tree.
+ */
 class BinarySearchTree {
-    
+    /**
+     * Node class.
+     */
     private final class Node {
-        
+        /**
+         * key variable.
+         */
         private Book key;
-        
+        /**
+         * val variable.
+         */
         private int val;
-        
-        private Node left;
-        
-        private Node right;
-        
+        /**
+         * variable size.
+         */
         private int size;
-        
+        /**
+         * { var_description }
+         */
+        private Node left;
+        /**
+         * { var_description }
+         */
+        private Node right;
+        /**
+         * Constructs the object.
+         *
+         * @param      key1  The key 1
+         * @param      val1  The value 1
+         * @param      s     { parameter_description }
+         */
         private Node(final Book key1, final int val1, final int s) {
             this.key = key1;
             this.val = val1;
@@ -58,16 +117,31 @@ class BinarySearchTree {
             right = null;
         }
     }
-
+    /**
+     * variable root.
+     */
      private Node root;
-
+    /**
+     * Constructs the object.
+     */
     BinarySearchTree() {
         root = null;
     }
+    /**
+     * size function.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int size() {
         return size(root);
     }
-
+    /**
+     * { function_description }
+     *
+     * @param      x     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     private int size(Node x) {
         if (x == null) {
             return 0;
@@ -75,7 +149,13 @@ class BinarySearchTree {
             return x.size;
         }
     }
-    
+    /**
+     * { function_description }
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int get(final Book key) {
         Node x = root;
         while (x != null) {
@@ -91,10 +171,25 @@ class BinarySearchTree {
         return -1;
     }
     
+    /**
+     * { function_description }
+     *
+     * @param      key   The key
+     * @param      val   The value
+     */
     public void put(final Book key, final int val) {
         root = put(root, key, val);
     }
    
+    /**
+     * { function_description }
+     *
+     * @param      x     { parameter_description }
+     * @param      key   The key
+     * @param      val   The value
+     *
+     * @return     { description_of_the_return_value }
+     */
     private Node put(final Node x, final Book key, final int val) {
         if (x == null) {
             return new Node(key, val, 1);
@@ -109,11 +204,21 @@ class BinarySearchTree {
         }
         return x;
     }
-
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Book max() {
         return max(root).key;
     }
-    
+    /**
+     * { function_description }
+     *
+     * @param      x     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     private Node max(Node x) {
         if (x.right == null) {
             return x;
@@ -121,10 +226,21 @@ class BinarySearchTree {
             return max(x.right);
         }
     }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Book min() {
         return min(root).key;
     }
-    
+    /**
+     * { function_description }.
+     *
+     * @param      x     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     private Node min(Node x) {
         if (x.left == null) {
             return x;
@@ -132,6 +248,13 @@ class BinarySearchTree {
             return min(x.left);
         }
     }
+    /**
+     * { function_description }.
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Book ceil(Book key) {
         Node x = ceil(root, key);
         if (x == null) {
@@ -140,7 +263,14 @@ class BinarySearchTree {
             return x.key;
         }
     }
-    
+    /**
+     * { function_description }.
+     *
+     * @param      x     { parameter_description }
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
     private Node ceil(Node x, Book key) {
         if (x == null) {
             return null;
@@ -160,6 +290,13 @@ class BinarySearchTree {
         return ceil(x.right, key);
     }
     
+    /**
+     * { function_description }.
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Book floor(Book key) {
         Node x = floor(root, key);
         if (x == null) {
@@ -169,6 +306,14 @@ class BinarySearchTree {
         }
     }
     
+    /**
+     * { function_description }.
+     *
+     * @param      x     { parameter_description }
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
     private Node floor(Node x, Book key) {
         if (x == null) {
             return null;
@@ -187,12 +332,25 @@ class BinarySearchTree {
             return x;
         }
     }
-    
+    /**
+     * { function_description }.
+     *
+     * @param      k     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Book select(int k) {
         Node x = select(root, k);
         return x.key;
     }
-    
+    /**
+     * { function_description }.
+     *
+     * @param      x     { parameter_description }
+     * @param      k     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     private Node select(Node x, int k) {
         if (x == null) {
             return null;
@@ -225,13 +383,21 @@ class BinarySearchTree {
     //     }
     // }
 }
-
+/**
+ * solution class.
+ */
 public final class Solution {
-    
+    /**
+     * Constructs the object.
+     */
     private Solution() {
       
     }
-    
+    /**
+     * main method.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         BinarySearchTree bst = new BinarySearchTree();
