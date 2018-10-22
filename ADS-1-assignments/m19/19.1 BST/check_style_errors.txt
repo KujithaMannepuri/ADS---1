@@ -14,8 +14,6 @@ Starting audit...
 [ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:348:33: Parameter k should be final. [FinalParameters]
 [ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:364: Line has trailing spaces. [RegexpSingleline]
 [ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:387: Line has trailing spaces. [RegexpSingleline]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:402: Line is longer than 80 characters (found 96). [LineLength]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:422: Line is longer than 80 characters (found 84). [LineLength]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:427: Line is longer than 80 characters (found 84). [LineLength]
+[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:432:21: '(' should be on the previous line. [MethodParamPad]
 Audit done.
-Checkstyle ends with 18 errors.
+Checkstyle ends with 16 errors.

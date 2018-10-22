@@ -399,12 +399,12 @@ public final class Solution {
             switch (tokens[0]) {
             case "put":
                 Book obj = new Book(tokens[1],
-                                                    tokens[2], Float.parseFloat(tokens[2 + 1]));
+                tokens[2], Float.parseFloat(tokens[2 + 1]));
                 bst.put(obj, Integer.parseInt(tokens[2 + 2]));
                 break;
             case "get":
                 obj = new Book(tokens[1], tokens[2],
-                                        Float.parseFloat(tokens[2 + 1]));
+                Float.parseFloat(tokens[2 + 1]));
                 if (bst.get(obj) == -1) {
                     System.out.println("null");
                 } else {
@@ -419,16 +419,17 @@ public final class Solution {
                 break;
             case "floor":
                 obj = new Book(tokens[1],
-                                        tokens[2], Float.parseFloat(tokens[2 + 1]));
+                tokens[2], Float.parseFloat(tokens[2 + 1]));
                 System.out.println(bst.floor(obj));
                 break;
             case "ceiling":
                 obj = new Book(tokens[1],
-                                        tokens[2], Float.parseFloat(tokens[2 + 1]));
+                tokens[2], Float.parseFloat(tokens[2 + 1]));
                 System.out.println(bst.ceil(obj));
                 break;
             case "select":
-                System.out.println(bst.select(Integer.parseInt(tokens[1])));
+                System.out.println(bst.select
+                    (Integer.parseInt(tokens[1])));
                 break;
             default:
                 break;
