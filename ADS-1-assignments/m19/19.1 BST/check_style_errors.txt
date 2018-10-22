@@ -1,19 +1,5 @@
 Starting audit...
 [ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:143:22: Parameter x should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:218:22: Parameter x should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:240:22: Parameter x should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:254:22: Parameter key should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:270:23: Parameter x should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:270:31: Parameter key should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:295:23: Parameter key should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:311:24: Parameter x should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:311:32: Parameter key should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:336:24: Parameter k should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:348:25: Parameter x should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:348:33: Parameter k should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:364: Line has trailing spaces. [RegexpSingleline]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:387: Line has trailing spaces. [RegexpSingleline]
-[ERROR] F:\ADS---1\ADS-1-assignments\m19\19.1 BST\Solution.java:432:21: '(' should be on the previous line. [MethodParamPad]
 Audit done.
-Checkstyle ends with 16 errors.
+Checkstyle ends with 2 errors.

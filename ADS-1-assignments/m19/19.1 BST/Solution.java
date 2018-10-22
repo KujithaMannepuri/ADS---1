@@ -215,7 +215,7 @@ class BinarySearchTree {
      *
      * @return     { description_of_the_return_value }
      */
-    private Node max(Node x) {
+    private Node max(final Node x) {
         if (x.right == null) {
             return x;
         } else {
@@ -237,7 +237,7 @@ class BinarySearchTree {
      *
      * @return     { description_of_the_return_value }
      */
-    private Node min(Node x) {
+    private Node min(final Node x) {
         if (x.left == null) {
             return x;
         } else {
@@ -251,7 +251,7 @@ class BinarySearchTree {
      *
      * @return     { description_of_the_return_value }
      */
-    public Book ceil(Book key) {
+    public Book ceil(final Book key) {
         Node x = ceil(root, key);
         if (x == null) {
             return null;
@@ -267,7 +267,7 @@ class BinarySearchTree {
      *
      * @return     { description_of_the_return_value }
      */
-    private Node ceil(Node x, Book key) {
+    private Node ceil(final Node x, final Book key) {
         if (x == null) {
             return null;
         }
@@ -292,7 +292,7 @@ class BinarySearchTree {
      *
      * @return     { description_of_the_return_value }
      */
-    public Book floor(Book key) {
+    public Book floor(final Book key) {
         Node x = floor(root, key);
         if (x == null) {
             return null;
@@ -308,7 +308,7 @@ class BinarySearchTree {
      *
      * @return     { description_of_the_return_value }
      */
-    private Node floor(Node x, Book key) {
+    private Node floor(final Node x, final Book key) {
         if (x == null) {
             return null;
         }
@@ -333,7 +333,7 @@ class BinarySearchTree {
      *
      * @return     { description_of_the_return_value }
      */
-    public Book select(int k) {
+    public Book select(final int k) {
         Node x = select(root, k);
         return x.key;
     }
@@ -345,7 +345,7 @@ class BinarySearchTree {
      *
      * @return     { description_of_the_return_value }
      */
-    private Node select(Node x, int k) {
+    private Node select(final Node x, final int k) {
         if (x == null) {
             return null;
         }
@@ -361,7 +361,6 @@ class BinarySearchTree {
     // public int rank(Book key) {
     //     return rank(key, root);
     // }
-    
     // private int rank(Book key, Node x) {
     //     if (x == null) {
     //         return 0;
@@ -384,7 +383,6 @@ public final class Solution {
      * Constructs the object.
      */
     private Solution() {
-      
     }
     /**
      * main method.
@@ -428,8 +426,7 @@ public final class Solution {
                 System.out.println(bst.ceil(obj));
                 break;
             case "select":
-                System.out.println(bst.select
-                    (Integer.parseInt(tokens[1])));
+System.out.println(bst.select(Integer.parseInt(tokens[1])));
                 break;
             default:
                 break;
