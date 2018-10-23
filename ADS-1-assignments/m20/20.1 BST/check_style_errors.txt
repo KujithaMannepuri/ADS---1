@@ -1,0 +1,13 @@
+Starting audit...
+[ERROR] F:\ADS---1\ADS-1-assignments\m20\20.1 BST\Solution.java:378:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m20\20.1 BST\Solution.java:381:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m20\20.1 BST\Solution.java:387:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m20\20.1 BST\Solution.java:387:25: Parameter x should be final. [FinalParameters]
+[ERROR] F:\ADS---1\ADS-1-assignments\m20\20.1 BST\Solution.java:387:33: Parameter key should be final. [FinalParameters]
+[ERROR] F:\ADS---1\ADS-1-assignments\m20\20.1 BST\Solution.java:412:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m20\20.1 BST\Solution.java:418:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m20\20.1 BST\Solution.java:426:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m20\20.1 BST\Solution.java:432:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m20\20.1 BST\Solution.java:432:28: Parameter x should be final. [FinalParameters]
+Audit done.
+Checkstyle ends with 10 errors.
