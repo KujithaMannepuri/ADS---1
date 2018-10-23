@@ -375,46 +375,74 @@ class BinarySearchTree {
     //         return size(x.left);
     //     }
     // }
+    /**
+     * Determines if empty.
+     *
+     * @return     True if empty, False otherwise.
+     */
     public boolean isEmpty() {
         return size() == 0;
     }
+    /**
+     * { function_description }.
+     *
+     * @param      key   The key
+     */
     public void delete(final Book key) {
         if (key == null) {
             throw new NoSuchElementException("calls delete() with a null key");
         }
         root = delete(root, key);
     }
-    private Node delete(Node x, Book key) {
-        if (x == null) {
+    /**
+     * delete function.
+     *
+     * @param      x     { parameter_description }
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
+    private Node delete(final Node x, final Book key) {
+        Node p = x;
+        if (p == null) {
             return null;
         }
-        int cmp = key.compareTo(x.key);
+        int cmp = key.compareTo(p.key);
         if (cmp < 0) {
-            x.left  = delete(x.left,  key);
+            p.left  = delete(p.left,  key);
         } else if (cmp > 0) {
-            x.right = delete(x.right, key);
+            p.right = delete(p.right, key);
         } else {
-            if  (x.right == null) {
-                return x.left;
+            if  (p.right == null) {
+                return p.left;
             }
-            if (x.left  == null) {
-                return x.right;
+            if (p.left  == null) {
+                return p.right;
             }
-            Node temp = x;
-            x = min(temp.right);
-            x.right = deleteMin(temp.right);
-            x.left = temp.left;
+            Node temp = p;
+            p = min(temp.right);
+            p.right = deleteMin(temp.right);
+            p.left = temp.left;
         }
-        x.size = size(x.left) + size(x.right) + 1;
-        return x;
+        p.size = size(p.left) + size(p.right) + 1;
+        return p;
     }
-
+    /**
+     * { function_description }.
+     */
     public void deleteMax() {
         if (isEmpty()) {
             throw new NoSuchElementException("Symbol table underflow");
         }
         root = deleteMax(root);
     }
+    /**
+     * { function_description }.
+     *
+     * @param      x     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     private Node deleteMax(final Node x) {
         if (x.right == null) {
             return x.left;
@@ -423,12 +451,22 @@ class BinarySearchTree {
         x.size = size(x.left) + size(x.right) + 1;
         return x;
     }
+    /**
+     * { function_description }.
+     */
     public void deleteMin() {
         if (isEmpty()) {
             throw new NoSuchElementException("Symbol table underflow");
         }
         root = deleteMin(root);
     }
+    /**
+     * delete minimum function.
+     *
+     * @param      x     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     private Node deleteMin(Node x) {
         if (x.left == null) {
             return x.right;
