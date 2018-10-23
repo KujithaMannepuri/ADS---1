@@ -467,7 +467,7 @@ class BinarySearchTree {
      *
      * @return     { description_of_the_return_value }
      */
-    private Node deleteMin(Node x) {
+    private Node deleteMin(final Node x) {
         if (x.left == null) {
             return x.right;
         }
