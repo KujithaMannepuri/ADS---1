@@ -29,7 +29,6 @@ class SequentialSearchST<Key, Value> {
      * Initializes an empty symbol table.
      */
     SequentialSearchST() {
-       
     }
     /**
      * Gets the size.
@@ -40,28 +39,29 @@ class SequentialSearchST<Key, Value> {
         return size;
     }
     /**
-     * Is this symbol table empty?
-     * @return {@code true} if this symbol table is empty and
-     * {@code false} otherwise
+     * Determines if empty.
+     *
+     * @return     True if empty, False otherwise.
      */
     public boolean isEmpty() {
         return getSize() == 0;
     }
     /**
-     * Does this symbol table contain the given key?
-     * @param key the key
-     * @return {@code true} if this symbol table contains {@code key} and
-     *     {@code false} otherwise
+     * { function_description }.
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
      */
     public boolean contains(final Key key) {
         return get(key) != null;
     }
     /**
-     * Returns the value associated with the given key.
-     * @param key the key
-     * @return the value associated with the given key if the key is in
-     * the symbol table
-     *     and {@code null} if the key is not in the symbol table
+     * { function_description }.
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
      */
     public Value get(final Key key) {
         for (Node x = first; x != null; x = x.next) {
@@ -121,9 +121,8 @@ class SequentialSearchST<Key, Value> {
         x.next = delete(x.next, key);
         return x;
     }
-    
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -143,7 +142,7 @@ class SequentialSearchST<Key, Value> {
  */
 class SeparateChainingHashST<Key, Value> {
     /**
-     * declaration of variable.
+     * variable declaration.
      */
     private static final int capacity = 4;
     /**
@@ -155,7 +154,7 @@ class SeparateChainingHashST<Key, Value> {
      */
     private int m;
     /**
-     * array of linked-list symbol tables.
+     * { var_description }.
      */
     private SequentialSearchST<Key, Value>[] st;
     /**
@@ -165,8 +164,9 @@ class SeparateChainingHashST<Key, Value> {
         this(capacity);
     }
     /**
-     * Initializes an empty symbol table with {@code m} chains.
-     * @param m1 the initial number of chains
+     * constructor.
+     *
+     * @param      m1    The m 1
      */
     SeparateChainingHashST(final int m1) {
         this.m = m1;
@@ -174,8 +174,11 @@ class SeparateChainingHashST<Key, Value> {
         for (int i = 0; i < m; i++)
             st[i] = new SequentialSearchST<Key, Value>();
     } 
-    // resize the hash table to have the given number of chains,
-    // rehashing all of the keys
+    /**
+     * resize function.
+     *
+     * @param      chains  The chains
+     */
     private void resize(final int chains) {
         SeparateChainingHashST<Key, Value> temp = new
         SeparateChainingHashST<Key, Value>(chains);
@@ -188,38 +191,38 @@ class SeparateChainingHashST<Key, Value> {
         this.n  = temp.n;
         this.st = temp.st;
     }
-
-    // hash value between 0 and m-1
+    /**
+     * { function_description }.
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
     private int hash(final Key key) {
         return (key.hashCode() & 0x7fffffff) % m;
     } 
-
     /**
-     * Returns the number of key-value pairs in this symbol table.
+     * size.
      *
-     * @return the number of key-value pairs in this symbol table
+     * @return     { description_of_the_return_value }
      */
     public int size() {
         return n;
     } 
-
     /**
-     * Returns true if this symbol table is empty.
+     * Determines if empty.
      *
-     * @return {@code true} if this symbol table is empty;
-     *         {@code false} otherwise
+     * @return     True if empty, False otherwise.
      */
     public boolean isEmpty() {
         return size() == 0;
     }
-
     /**
-     * Returns true if this symbol table contains the specified key.
+     * { function_description }.
      *
-     * @param  key the key
-     * @return {@code true} if this symbol table contains {@code key};
-     *         {@code false} otherwise
-     * @throws IllegalArgumentException if {@code key} is {@code null}
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
      */
     public boolean contains(final Key key) {
         if (key == null) {
@@ -228,15 +231,12 @@ class SeparateChainingHashST<Key, Value> {
         }
         return get(key) != null;
     } 
-
     /**
-     * Returns the value associated with the specified key in this symbol
-     * table.
+     * get function.
      *
-     * @param  key the key
-     * @return the value associated with {@code key} in the symbol table;
-     *         {@code null} if no such value
-     * @throws IllegalArgumentException if {@code key} is {@code null}
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
      */
     public Value get(final Key key) {
         if (key == null) {
@@ -245,17 +245,11 @@ class SeparateChainingHashST<Key, Value> {
         int i = hash(key);
         return st[i].get(key);
     } 
-
     /**
-     * Inserts the specified key-value pair into the symbol table,
-     * overwriting the old value with the new value if the symbol table
-     * already contains the specified key. Deletes the specified key
-     * (and its associated value) from this symbol table
-     * if the specified value is {@code null}.
+     * { function_description }.
      *
-     * @param  key the key
-     * @param  val the value
-     * @throws IllegalArgumentException if {@code key} is {@code null}
+     * @param      key   The key
+     * @param      val   The value
      */
     public void put(final Key key, final Value val) {
         if (key == null) throw new IllegalArgumentException(
@@ -264,22 +258,16 @@ class SeparateChainingHashST<Key, Value> {
             delete(key);
             return;
         }
-
-        // double table size if average length of list >= 10
         if (n >= 10*m) resize(2*m);
 
         int i = hash(key);
         if (!st[i].contains(key)) n++;
         st[i].put(key, val);
     } 
-
     /**
-     * Removes the specified key and its associated value from this symbol
-     * table    
-     * (if the key is in this symbol table).    
+     * { function_description }
      *
-     * @param  key the key
-     * @throws IllegalArgumentException if {@code key} is {@code null}
+     * @param      key   The key
      */
     public void delete(final Key key) {
         if (key == null) throw new IllegalArgumentException(
@@ -288,12 +276,10 @@ class SeparateChainingHashST<Key, Value> {
         int i = hash(key);
         if (st[i].contains(key)) n--;
         st[i].delete(key);
-
-        // halve table size if average length of list <= 2
         if (m > capacity && n <= 2*m) resize(m/2);
     }
     /**
-     * return keys in symbol table as an Iterable.
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -322,25 +308,24 @@ public class Solution {
      */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
-        SeparateChainingHashST<String, Integer> hash = new
+        SeparateChainingHashST<String, Integer> hashSt = new
                     SeparateChainingHashST<String, Integer>();
         String integer = sc.nextLine();
         String[] token1 = sc.nextLine().split(" ");
         for(int i = 0; i < token1.length; i++) {
-            if (hash.contains(token1[i])) {
-                hash.put(token1[i], hash.get(token1[i])); 
+            if (hashSt.contains(token1[i])) {
+                hashSt.put(token1[i], hashSt.get(token1[i])); 
             } else {
-                hash.put(token1[i], 1);
+                hashSt.put(token1[i], 1);
             }
         }
-
         String[] token2 = sc.nextLine().split(" ");
         for (int i = 0; i < token2.length; i++) {
-            if (hash.contains(token2[i]) ) {
-                if(hash.get(token2[i]) == 0) {
+            if (hashSt.contains(token2[i]) ) {
+                if(hashSt.get(token2[i]) == 0) {
                     System.out.print("No");
                 } else {
-                    hash.put(token2[i], hash.get(token2[i]));
+                    hashSt.put(token2[i], hashSt.get(token2[i]));
                 }
             } else {
                 System.out.print("No");
