@@ -6,19 +6,37 @@ import java.util.Scanner;
  * @param      <Value>  The value
  */
 class SequentialSearchST<Key, Value> {
-    
+    /**
+     * { var_description }.
+     */
     private int size;
-    
+    /**
+     * { var_description }.
+     */
     private Node first;
-    
+    /**
+     * Class for node.
+     */
     private class Node {
-        
+        /**
+         * { var_description }.
+         */
         private Key key;
-        
+        /**
+         * { var_description }.
+         */
         private Value val;
-        
+        /**
+         * { var_description }.
+         */
         private Node next;
-        
+        /**
+         * Constructs the object.
+         *
+         * @param      k     { parameter_description }
+         * @param      v     { parameter_description }
+         * @param      n     { parameter_description }
+         */
         Node(final Key k, final Value v, final Node n)  {
             this.key  = k;
             this.val  = v;
@@ -71,7 +89,6 @@ class SequentialSearchST<Key, Value> {
         }
         return null;
     }
-    
     /**
      * put function.
      *
@@ -92,7 +109,6 @@ class SequentialSearchST<Key, Value> {
         first = new Node(key, val, first);
         size++;
     }
-
     /**
      * delete function.
      *
@@ -101,9 +117,8 @@ class SequentialSearchST<Key, Value> {
     public void delete(final Key key) {
         first = delete(first, key);
     }
-
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      x     { parameter_description }
      * @param      key   The key
@@ -144,7 +159,7 @@ class SeparateChainingHashST<Key, Value> {
     /**
      * variable declaration.
      */
-    private static final int capacity = 4;
+    private static final int INIT_CAPACITY = 4;
     /**
      * number of key-value pairs.
      */
@@ -161,7 +176,7 @@ class SeparateChainingHashST<Key, Value> {
      * Initializes an empty symbol table.
      */
     SeparateChainingHashST() {
-        this(capacity);
+        this(INIT_CAPACITY);
     }
     /**
      * constructor.
@@ -171,9 +186,10 @@ class SeparateChainingHashST<Key, Value> {
     SeparateChainingHashST(final int m1) {
         this.m = m1;
         st = (SequentialSearchST<Key, Value>[]) new SequentialSearchST[m];
-        for (int i = 0; i < m; i++)
+        for (int i = 0; i < m; i++) {
             st[i] = new SequentialSearchST<Key, Value>();
-    } 
+        }
+    }
     /**
      * resize function.
      *
@@ -199,8 +215,9 @@ class SeparateChainingHashST<Key, Value> {
      * @return     { description_of_the_return_value }
      */
     private int hash(final Key key) {
-        return (key.hashCode() & 0x7fffffff) % m;
-    } 
+        final int num = 0x7fffffff;
+        return (key.hashCode() & num) % m;
+    }
     /**
      * size.
      *
@@ -208,7 +225,7 @@ class SeparateChainingHashST<Key, Value> {
      */
     public int size() {
         return n;
-    } 
+    }
     /**
      * Determines if empty.
      *
@@ -230,7 +247,7 @@ class SeparateChainingHashST<Key, Value> {
             "argument to contains() is null");
         }
         return get(key) != null;
-    } 
+    }
     /**
      * get function.
      *
@@ -244,7 +261,7 @@ class SeparateChainingHashST<Key, Value> {
         }
         int i = hash(key);
         return st[i].get(key);
-    } 
+    }
     /**
      * { function_description }.
      *
@@ -252,32 +269,45 @@ class SeparateChainingHashST<Key, Value> {
      * @param      val   The value
      */
     public void put(final Key key, final Value val) {
-        if (key == null) throw new IllegalArgumentException(
+        /**
+         * { var_description }.
+         */
+        final int ten = 10;
+        if (key == null) {
+            throw new IllegalArgumentException(
             "first argument to put() is null");
+        }
         if (val == null) {
             delete(key);
             return;
         }
-        if (n >= 10*m) resize(2*m);
+        if (n >= ten * m) resize(2 * m);
 
         int i = hash(key);
-        if (!st[i].contains(key)) n++;
+        if (!st[i].contains(key)) {
+            n++;
+        }
         st[i].put(key, val);
-    } 
+    }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      key   The key
      */
     public void delete(final Key key) {
-        if (key == null) throw new IllegalArgumentException(
+        if (key == null) {
+            throw new IllegalArgumentException(
             "argument to delete() is null");
-
+        }
         int i = hash(key);
-        if (st[i].contains(key)) n--;
+        if (st[i].contains(key)) {
+            n--;
+        }
         st[i].delete(key);
-        if (m > capacity && n <= 2*m) resize(m/2);
+        if (m > INIT_CAPACITY && n <= 2 * m) {
+            resize(m / 2);
     }
+}
     /**
      * { function_description }.
      *
@@ -286,8 +316,9 @@ class SeparateChainingHashST<Key, Value> {
     public Iterable<Key> keys() {
         Queue<Key> queue = new Queue<Key>();
         for (int i = 0; i < m; i++) {
-            for (Key key : st[i].keys())
+            for (Key key : st[i].keys()) {
                 queue.enqueue(key);
+            }
         }
         return queue;
     }
@@ -295,7 +326,7 @@ class SeparateChainingHashST<Key, Value> {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructor.
      */
@@ -312,17 +343,17 @@ public class Solution {
                     SeparateChainingHashST<String, Integer>();
         String integer = sc.nextLine();
         String[] token1 = sc.nextLine().split(" ");
-        for(int i = 0; i < token1.length; i++) {
+        for (int i = 0; i < token1.length; i++) {
             if (hashSt.contains(token1[i])) {
-                hashSt.put(token1[i], hashSt.get(token1[i])); 
+                hashSt.put(token1[i], hashSt.get(token1[i]));
             } else {
                 hashSt.put(token1[i], 1);
             }
         }
         String[] token2 = sc.nextLine().split(" ");
         for (int i = 0; i < token2.length; i++) {
-            if (hashSt.contains(token2[i]) ) {
-                if(hashSt.get(token2[i]) == 0) {
+            if (hashSt.contains(token2[i])) {
+                if (hashSt.get(token2[i]) == 0) {
                     System.out.print("No");
                 } else {
                     hashSt.put(token2[i], hashSt.get(token2[i]));
