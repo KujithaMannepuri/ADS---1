@@ -281,8 +281,9 @@ class SeparateChainingHashST<Key, Value> {
             delete(key);
             return;
         }
-        if (n >= ten * m) resize(2 * m);
-
+        if (n >= ten * m) {
+            resize(2 * m);
+        }
         int i = hash(key);
         if (!st[i].contains(key)) {
             n++;

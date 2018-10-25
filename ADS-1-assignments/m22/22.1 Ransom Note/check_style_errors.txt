@@ -1,4 +1,2 @@
 Starting audit...
-[ERROR] F:\ADS---1\ADS-1-assignments\m22\22.1 Ransom Note\Solution.java:284: 'if' construct must use '{}'s. [NeedBraces]
 Audit done.
-Checkstyle ends with 1 errors.
