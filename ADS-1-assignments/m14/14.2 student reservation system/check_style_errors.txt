@@ -1,0 +1,9 @@
+Starting audit...
+[ERROR] F:\ADS---1\ADS-1-assignments\m14\14.2 student reservation system\Solution.java:47:8: Unused @param tag for 'm11'. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m14\14.2 student reservation system\Solution.java:48:8: Unused @param tag for 'm22'. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m14\14.2 student reservation system\Solution.java:49:8: Unused @param tag for 'm33'. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m14\14.2 student reservation system\Solution.java:55:30: Expected @param tag for 'm1'. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m14\14.2 student reservation system\Solution.java:55:44: Expected @param tag for 'm2'. [JavadocMethod]
+[ERROR] F:\ADS---1\ADS-1-assignments\m14\14.2 student reservation system\Solution.java:55:58: Expected @param tag for 'm3'. [JavadocMethod]
+Audit done.
+Checkstyle ends with 6 errors.
