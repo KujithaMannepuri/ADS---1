@@ -4,23 +4,23 @@ Yes
 Your Output: 
 Yes
 ----------------------------------------
-########## Testcase 1: Failed ##########
+########## Testcase 1: Passed ##########
 Expected Output: 
 No
 Your Output: 
-Yes
+No
 ----------------------------------------
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 No
 Your Output: 
-NoYes
+No
 ----------------------------------------
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 No
 Your Output: 
-Yes
+No
 ----------------------------------------
 ########## Testcase 4: Passed ##########
 Expected Output: 

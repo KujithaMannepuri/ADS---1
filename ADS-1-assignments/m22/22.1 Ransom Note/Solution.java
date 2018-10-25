@@ -346,7 +346,7 @@ public final class Solution {
         String[] token1 = sc.nextLine().split(" ");
         for (int i = 0; i < token1.length; i++) {
             if (hashSt.contains(token1[i])) {
-                hashSt.put(token1[i], hashSt.get(token1[i]));
+                hashSt.put(token1[i], hashSt.get(token1[i]) + 1);
             } else {
                 hashSt.put(token1[i], 1);
             }
@@ -356,11 +356,13 @@ public final class Solution {
             if (hashSt.contains(token2[i])) {
                 if (hashSt.get(token2[i]) == 0) {
                     System.out.print("No");
+                    return;
                 } else {
-                    hashSt.put(token2[i], hashSt.get(token2[i]));
+                    hashSt.put(token2[i], hashSt.get(token2[i]) - 1);
                 }
             } else {
                 System.out.print("No");
+                return;
             }
         }
         System.out.println("Yes");
