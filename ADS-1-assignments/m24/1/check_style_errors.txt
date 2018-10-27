@@ -1,16 +1,5 @@
 Starting audit...
-[ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:3: Missing a Javadoc comment. [JavadocType]
-[ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:4:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:4:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:4:13: Variable 'rollNum' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:5:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:5:16: Variable 'name' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:6:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:6:16: Variable 'marks' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:7:9: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:7:21: Parameter num should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:7:30: Parameter stdnt should be final. [FinalParameters]
-[ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:7:44: Parameter m should be final. [FinalParameters]
+[ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:4:4: File contains tab characters (this is the first instance). [FileTabCharacter]
 [ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:14: Missing a Javadoc comment. [JavadocType]
 [ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:14:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 [ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:15:9: Missing a Javadoc comment. [JavadocMethod]
@@ -27,4 +16,4 @@ Starting audit...
 [ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:40:41: '}' at column 6 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
 [ERROR] F:\ADS---1\ADS-1-assignments\m24\1\Solution.java:42: Line is longer than 80 characters (found 109). [LineLength]
 Audit done.
-Checkstyle ends with 27 errors.
+Checkstyle ends with 16 errors.
