@@ -1,15 +1,15 @@
 import java.util.Scanner;
 
-// class StudentInfo {
-// 	int rollNum;
-// 	String name;
-// 	Double marks;
-// 	StudentInfo(int num, String stdnt, Double m) {
-// 		this.rollNum = num;
-// 		this.name = stdnt;
-// 		this.marks = m;
-// 	}
-// }
+class StudentInfo {
+	int rollNum;
+	String name;
+	Double marks;
+	StudentInfo(int num, String stdnt, Double m) {
+		this.rollNum = num;
+		this.name = stdnt;
+		this.marks = m;
+	}
+}
 
 class Solution {
 	public static void main(String[] args) {
