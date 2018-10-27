@@ -10,9 +10,11 @@ class StudentInfo {
 		this.marks = m;
 	}
 }
-
+/**
+ * Class for solution.
+ */
 class Solution {
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		Scanner sc = new Scanner(System.in);
         SeparateChainingHashST<Integer, String> hashSt1 = new
                     SeparateChainingHashST<Integer, String>();
