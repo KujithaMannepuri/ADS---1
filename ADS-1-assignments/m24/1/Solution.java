@@ -30,19 +30,10 @@ class Solution {
         for (int i = 0; i < n2; i++) {
         	String[] token2 = sc.nextLine().split(" ");
 				if (token2[2].equals("1")){
-					if (hashSt1.get(Integer.parseInt(token2[1])) == null) {
-						System.out.println("Student doesn't exists...");
-					}
-					else {
 						System.out.println(hashSt1.get(Integer.parseInt(token2[1])));
-					}
+					
 				} else if (token2[2].equals("2")){
-					if (hashSt2.get(Integer.parseInt(token2[1])) == null) {
-						System.out.println("Student doesn't exists...");
-					}
-					else {
 						System.out.println(hashSt2.get(Integer.parseInt(token2[2])));
-					}
 		}
 	}
 }
